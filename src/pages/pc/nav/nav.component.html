@@ -1,0 +1,95 @@
+<h1>导航</h1>
+<ui-divider></ui-divider>
+<code-view>
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="demo.html">
+  </div>
+  <div render="desc">
+    <p>通过组合 <code>ui-nav</code>、<code>ui-nav-item</code>、<code>ui-nav-inner</code>、<code>ui-nav-thumbnail</code> 即可实现树状嵌套导航，<code>ui-nav</code> 组件会自动识别上下文层级，并呈现收起或展开的效果。</p>
+    <p><strong><code>routerLink</code> 指令应该放在 <code>ui-nav-inner</code> 上，<code>ui-nav-inner</code> 会根据路由状态，自动呈现高亮效果，其上层菜单也会自动展开。</strong>所以，你不需要添加 <code>routerLinkActive</code> 指令，虽然这么做也不会产生什么问题。</p>
+    <div class="ui-alert">
+      <strong class="ui-color-primary">小知识：</strong><code>ui-nav</code> 系列组件的上下文识别，是通过依赖注入服务实现的。有时候，需要动态生成菜单，一般想到的解决方法是通过 <code>ngFor</code> 指令和 <code>ng-template</code> 模板来实现，但由于 <code>ng-template</code> 的上下文由是词法作用域（即声明时的上下文），所以，如果动态渲染的菜单有层级关系，会发现，并不会如预期那样产生下拉箭头，点击后，也不会展开下一级菜单，所幸，这种需求一般不会出现。当然，如果要实现动态渲染，我们就需要用到 Angular 动态字符串渲染能力来实现。
+    </div>
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<code-view>
+  <h4 render="title" uiAnchor id="动态渲染菜单">动态渲染菜单</h4>
+  <div render="demo">
+    <nav-demo1></nav-demo1>
+  </div>
+  <div render="desc">
+    通过后台返回的数据，动态拼接字符串，再运用 <code>Compiler</code> 类，动态编译并插入到 DOM，实现动态生成菜单。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo1.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo1.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<code-view>
+  <h4 render="title" uiAnchor id="缩略菜单">缩略菜单</h4>
+  <div render="demo" style="overflow: hidden">
+    <nav-demo2></nav-demo2>
+  </div>
+  <div render="desc">
+    通过改变 <code>ui-nav</code> 的 <code>thumbnail</code> 属性，可以让菜单在正常显示和缩略状态切换显示。
+    <div class="ui-alert"><strong class="ui-color-danger">注意：</strong>一般情况下，菜单在浏览器窗口左侧，并且不随着页面的滚动页滚动，当在缩略菜单模式下且菜单过长时，需要有滚动条，由于浏览器 <code>overflow</code> 的限制，缩略菜单弹出的子菜单会被浏览器裁剪掉，所以需要使用 <code>ui-scroll</code> 组件来实现，并且，要在样式表里重置 <code>ui-scroll</code> 组件的 <code>overflow</code> 为 <code>visible</code>，以保证子菜单可以正常显示。</div>
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>SCSS</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo2.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo2.component.scss">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo2.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<div class="doc-content">
+  <link rel="markdown" href="doc.md">
+</div>
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="../" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="../" fragment="动态渲染菜单">动态渲染菜单</a>
+    <a uiAnchorLink routerLink="../" fragment="缩略菜单">缩略菜单</a>
+    <a uiAnchorLink routerLink="../" fragment="ui-nav-输入属性">ui-nav 输入属性</a>
+  </div>
+</div>

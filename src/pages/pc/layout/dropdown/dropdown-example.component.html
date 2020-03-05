@@ -1,0 +1,67 @@
+<h1>下拉框</h1>
+<ui-divider></ui-divider>
+<code-view>
+  <h4 render="title">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="./demo.html">
+  </div>
+  <div render="desc">
+    通过 <code>ui-dropdown</code> 和 <code>ui-dropdown-menu</code> 组合，即可实现常见的下拉框。<code>dropdown</code> 组件默认通过 click 事件实现显示/隐藏，大多数情况下，这满足需求。但你也可以设置 <code>autoDisplay</code> 属性为 <code>false</code> 来关闭这种特性，并通过手动控制 <code>open</code> 属性的值来控制显示隐藏。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<code-view>
+  <h4 render="title" uiAnchor id="自定义下拉选择框">自定义下拉选择框</h4>
+  <div render="demo">
+    <demo-dropdown-input></demo-dropdown-input>
+  </div>
+  <div render="desc">
+    在某些情况下，<code>ui-select</code> 组件不能满足需求，需要自定义下拉选择控件，这时，可通过组合 <code>ui-dropdown-input</code> 组件，可以方便的模拟类似 select 的效果，并定制自己的功能。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./dropdown-input-example.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./dropdown-input-example.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<div class="doc-content">
+  <link rel="markdown" href="./doc.md">
+</div>
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="./" fragment="自定义下拉选择框">自定义下拉选择框</a>
+    <a uiAnchorLink routerLink="./" fragment="ui-dropdown">ui-dropdown</a>
+    <a uiAnchorLink routerLink="./" class="h4" fragment="ui-dropdown-输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="./" class="h4" fragment="ui-dropdown-输出事件">输出事件</a>
+    <a uiAnchorLink routerLink="./" fragment="ui-dropdown-input">ui-dropdown-input</a>
+    <a uiAnchorLink routerLink="./" class="h4" fragment="ui-dropdown-input-输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="./" class="h4" fragment="ui-dropdown-input-输出事件">输出事件</a>
+    <a uiAnchorLink routerLink="./" fragment="ui-dropdown-menu">ui-dropdown-menu</a>
+    <a uiAnchorLink routerLink="./" class="h4" fragment="ui-dropdown-menu-输入属性">输入属性</a>
+  </div>
+</div>

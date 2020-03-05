@@ -1,0 +1,11 @@
+.responsive-table-wrap {
+  ui-table-responsive {
+    white-space: nowrap;
+  }
+
+  ::ng-deep {
+    .doc {
+      max-width: 50%;
+    }
+  }
+}

@@ -1,0 +1,199 @@
+<div class="left" [class.thumbnail]="thumbnail">
+  <!--  <div class="logo">-->
+  <!--    <h1><img src="../../assets/images/logo2.png"></h1>-->
+  <!--  </div>-->
+  <div class="top">
+    <div class="about">
+      <div class="avatar">
+        <img src="../../assets/images/avatar.jpeg">
+      </div>
+      <div class="btn-group">
+        <a class="ui-btn ui-btn-sm ui-btn-success" href="mailto:tanbohb@gmail.com">Email</a>&nbsp;
+        <a class="ui-btn ui-btn-sm ui-btn-success" href="https://github.com/tbhuabi/tanbo-ui" target="_blank">Github</a>
+      </div>
+    </div>
+    <div class="version">
+      <button type="button" class="ui-btn ui-btn-sm ui-btn-dark" (click)="toggle()"><span class="icon-list"></span></button>
+      <span>&nbsp;当前版本：{{ version }}</span>
+    </div>
+  </div>
+  <ui-scroll (wheel)="$event.preventDefault()">
+    <ui-nav class="nav" [thumbnail]="thumbnail">
+      <ui-nav-item>
+        <ui-nav-inner routerLink="./start">
+          <ui-nav-thumbnail><span class="icon-home"></span></ui-nav-thumbnail>
+          开始
+        </ui-nav-inner>
+      </ui-nav-item>
+      <ui-nav-item>
+        <ui-nav-inner>
+          <ui-nav-thumbnail><span class="icon-pencil"></span></ui-nav-thumbnail>
+          表单
+        </ui-nav-inner>
+        <ui-nav>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/button">Button</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/input">Input</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/checkbox">Checkbox</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/radio">Radio</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/date">Date</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/range">Range</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/select">Select</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/switch">Switch</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/file">文件上传</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/pagination">分页</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/picker">级联选择器</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/editor">富文本编辑器</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./forms/markdown-editor">Markdown 编辑器</ui-nav-inner>
+          </ui-nav-item>
+        </ui-nav>
+      </ui-nav-item>
+      <ui-nav-item>
+        <ui-nav-inner>
+          <ui-nav-thumbnail><span class="icon-insert-template"></span></ui-nav-thumbnail>
+          布局组件
+        </ui-nav-inner>
+        <ui-nav>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./layout/dropdown">下拉框</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./layout/panel">面板</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./layout/tab">Tab</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./layout/toolbar">工具条</ui-nav-inner>
+          </ui-nav-item>
+        </ui-nav>
+      </ui-nav-item>
+      <ui-nav-item>
+        <ui-nav-inner>
+          <ui-nav-thumbnail><span class="icon-info"></span></ui-nav-thumbnail>
+          弹窗及通知
+        </ui-nav-inner>
+        <ui-nav>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./modal/modal">模态框</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./modal/notify">通知</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./modal/dialog">对话框</ui-nav-inner>
+          </ui-nav-item>
+        </ui-nav>
+      </ui-nav-item>
+      <ui-nav-item>
+        <ui-nav-inner routerLink="./table">
+          <ui-nav-thumbnail><span class="icon-table"></span></ui-nav-thumbnail>
+          表格
+        </ui-nav-inner>
+      </ui-nav-item>
+      <ui-nav-item>
+        <ui-nav-inner routerLink="./nav">
+          <ui-nav-thumbnail><span class="icon-list"></span></ui-nav-thumbnail>
+          导航
+        </ui-nav-inner>
+      </ui-nav-item>
+      <ui-nav-item>
+        <ui-nav-inner routerLink="./tree">
+          <ui-nav-thumbnail><span class="icon-tree"></span></ui-nav-thumbnail>
+          树
+        </ui-nav-inner>
+      </ui-nav-item>
+      <ui-nav-item>
+        <ui-nav-inner routerLink="./timeline">
+          <ui-nav-thumbnail><span class="icon-sort-amount-desc"></span></ui-nav-thumbnail>
+          时间轴
+        </ui-nav-inner>
+      </ui-nav-item>
+      <ui-nav-item>
+        <ui-nav-inner routerLink="./step">
+          <ui-nav-thumbnail><span class="icon-tab"></span></ui-nav-thumbnail>
+          步骤条
+        </ui-nav-inner>
+      </ui-nav-item>
+      <ui-nav-item>
+        <ui-nav-inner>
+          <ui-nav-thumbnail><span class="icon-warning"></span></ui-nav-thumbnail>
+          其它
+        </ui-nav-inner>
+        <ui-nav>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./other/progress">进度条</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./other/tag">标签</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./other/tooltip">提示</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./other/pop-confirm">带操作的提示</ui-nav-inner>
+          </ui-nav-item>
+          <ui-nav-item>
+            <ui-nav-inner routerLink="./other/breadcrumb">面包屑</ui-nav-inner>
+          </ui-nav-item>
+        </ui-nav>
+      </ui-nav-item>
+    </ui-nav>
+  </ui-scroll>
+</div>
+<div class="right" [class.thumbnail]="thumbnail">
+  <!--  <div class="top-bar ui-container-fluid">-->
+  <!--    <div class="ui-pull-left btn-wrap">-->
+  <!--      <button type="button" (click)="toggle()" class="ui-btn ui-btn-dark ui-btn-sm"><span class="icon-list"></span></button>-->
+  <!--    </div>-->
+  <!--    <nav class="ui-pull-right ui-clearfix">-->
+  <!--      <a href="javascript:;" routerLinkActive="active" routerLink="/ui"><span class="icon-display"></span> PC端</a>-->
+  <!--      <a href="javascript:;" routerLinkActive="active" routerLink="/native"><span class="icon-mobile2"></span> 移动端</a>-->
+  <!--      <a href="javascript:;" routerLinkActive="active" routerLink="/bezier"><span class="icon-lastfm"></span>-->
+  <!--        贝塞尔曲线</a>-->
+  <!--    </nav>-->
+  <!--  </div>-->
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+<!--<div class="left">-->
+<!--  <div class="author-info">-->
+<!--    <div>-->
+<!--      <a href="mailto:tanbohb@gmail.com">Email</a>-->
+<!--      <a href="https://github.com/tbhuabi/tanbo-ui" target="_blank">GitHub</a>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</div>-->
+<!--<div class="right">-->
+<!--  <div class="content">-->
+<!--    <router-outlet></router-outlet>-->
+<!--  </div>-->
+<!--</div>-->

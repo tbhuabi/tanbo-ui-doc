@@ -1,0 +1,122 @@
+@import "../../assets/scss/varibles";
+
+:host {
+  display: block;
+  border: 1px solid $color-light;
+  position: relative;
+  border-radius: 4px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: #fff;
+}
+
+.title {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  transform: translateY(-50%);
+  background-color: #fff;
+  padding: 0 10px;
+  //border: 1px solid $color-gray-light;
+  border-radius: 4px;
+
+  ::ng-deep {
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  border-radius: inherit;
+  //background-color: $color-lighter;
+}
+
+.doc {
+  flex: 1;
+  border-right: 1px solid $color-light;
+  text-align: justify;
+}
+
+.demo {
+  padding: 30px 20px;
+}
+
+.desc {
+  position: relative;
+  border-top: 1px dashed $color-light;
+  padding: 30px 20px;
+}
+
+.desc-title {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  margin: 0;
+  transform: translateY(-50%);
+  //background-color: $color-lighter;
+  background-color: #fff;
+  padding: 0 10px;
+}
+
+.code {
+  flex: 1;
+  background-color: #f6f8fa;
+  border-radius: 0 4px 4px 0;
+  overflow: hidden;
+
+  ::ng-deep {
+    ui-tab-bar {
+      background-color: #fff;
+    }
+
+    pre {
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      background: none;
+    }
+  }
+}
+
+.toolbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+
+  .bg {
+    border-radius: 0 0 4px 4px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(255, 255, 255, .7));
+    pointer-events: none;
+  }
+
+  .btn-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+
+    button {
+      width: 120px;
+      height: 20px;
+      border: none;
+      background: none;
+      outline: none;
+      border-radius: 0 0 10px 10px;
+      color: $color-gray-dark;
+      cursor: pointer;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

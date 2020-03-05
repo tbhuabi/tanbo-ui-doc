@@ -1,0 +1,53 @@
+@import "../../../assets/scss/varibles";
+
+.demo {
+  height: 40px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  background-color: $color-lighter;
+  box-shadow: inset 0 0 2px $color-light;
+  position: relative;
+  > div {
+    left: 0;
+    right: 40px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    div {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      border-radius: 50%;
+      left: 0;
+      top: 0;
+      background-color: $color-primary;
+    }
+  }
+}
+
+table {
+  margin-top: 20px;
+}
+
+.canvas-wrap {
+  width: 320px;
+  height: 320px;
+  background-color: #f9f9f9;
+  transform: rotateX(180deg);
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.demo-control {
+  padding-left: 40px;
+}
+
+.custom-args {
+  margin-bottom: 50px;
+}

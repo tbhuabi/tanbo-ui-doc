@@ -1,0 +1,32 @@
+<h1>通知</h1>
+<ui-divider></ui-divider>
+<code-view [maxHeight]="500">
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="demo.html">
+  </div>
+  <div render="desc">
+    <link rel="markdown" href="notify.md">
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="notify.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+  </div>
+</div>

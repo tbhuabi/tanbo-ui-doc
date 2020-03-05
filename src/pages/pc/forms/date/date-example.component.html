@@ -1,0 +1,212 @@
+<h1>日历时间选择器</h1>
+<ui-divider></ui-divider>
+<p>适合在需要设置日期或时间时使用</p>
+<code-view>
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="./demo.html">
+  </div>
+  <div render="desc">
+    如果只选择年月日，用默认配置即可
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./date-example.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view [maxHeight]="350">
+  <h4 render="title" uiAnchor id="选择一段日期">选择一段日期</h4>
+  <div render="demo">
+    <date-demo1></date-demo1>
+  </div>
+  <div render="desc">
+    如果要选择一段时间，可通过 <code>minDate</code> 和 <code>maxDate</code> 属性关联两个组件来实现
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo/demo1.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo/demo1.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="选择一段时间">选择一段时间</h4>
+  <div render="demo">
+    <date-demo2></date-demo2>
+  </div>
+  <div render="desc">
+    如果要选择一段时间，可通过 <code>minTime</code> 和 <code>maxTime</code> 属性关联两个组件来实现
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo/demo2.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="同时限定日期范围和时间段">同时限定日期范围和时间段</h4>
+  <div render="demo">
+    <date-demo3></date-demo3>
+  </div>
+  <div render="desc">
+    可通过组合 <code>minDate</code>/<code>maxDate</code>， <code>minTime</code>/<code>maxTime</code> 属性实现更精确的时间选择。<br>
+    <div class="ui-alert ui-alert-dark ui-alert-fill">
+      <strong class="ui-color-danger">注意：</strong>要选择时间点，需要设置 <code>displayForm</code> 属性，且一定包含
+      <code>h</code>/<code>hh</code>、<code>m</code>/<code>mm</code> 或 <code>s</code>/<code>ss</code> 等关键字。
+    </div>
+    <div class="ui-alert ui-alert-gray"><strong class="ui-color-success">小技巧：</strong>如果 minTime 大于 maxTime，如：<code>minTime="20:00:00"
+      maxTime="06:00:00"</code>，则会按照前一天的晚上 8 点，到第二天早上 6 点来限制范围！
+    </div>
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo/demo3.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo/demo3.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="日期及时间的格式化">日期及时间的格式化</h4>
+  <div render="demo">
+    <date-demo4></date-demo4>
+  </div>
+  <div render="desc">
+    <p>时间选择组件的显示样式及功能是根据 <code>displayFormat</code> 中的关键字的不同而不同，通过组合 <code>format</code>、<code>displayFormat</code>
+      属性实现个性化的时间格式及功能。</p>
+    <p>
+      格式化关键字有：<code>yyyy</code>、<code>M</code>、<code>MM</code>、<code>d</code>、<code>dd</code>、<code>h</code>、<code>hh</code>、<code>m</code>、<code>mm</code>、<code>s</code>、<code>ss</code>。它们分别代表年、月、日、时、分、秒，时间选择组件会分别去匹配这些关键字，来实现选择结果的格式化。
+      因此，你可以传入关键字任意组合，个性化定制选择结果，如：<br><code>😇hh😍mm😳ss😜yyyy😂MM😎dd😏</code> 也是合法的。
+    </p>
+    <div class="ui-alert ui-alert-dark ui-alert-fill">
+      <strong class="ui-color-danger">注意：</strong><br>
+      <ol>
+        <li>当 <code>displayFormat</code> 为空时，以 <code>format</code> 的值为准。即当 <code>format</code> 和
+          <code>displayFormat</code> 一样时，只传入 <code>format</code> 属性即可。
+        </li>
+        <li>
+          传入时间选择组件的 <code>value</code> 必须和 <code>displayFormat</code> 的格式保持一致，才能正确解析出传入的时间，但有一些特殊性况，是不能正确解析的。如：
+          <p><code>displayFormat</code> 为 <code>yyyyMd</code>，<code>value</code> 为 <code>201913</code>，这样的情况，会识别为 2019
+            年 1 月 3 日。但当 value 为 201912 时，正确的结果应该是 2019 年 1 月 2 日，但程序比较难枚举所有意外，所以组件采用贪婪匹配的方式，会识别为 2019 年 12
+            月，并且匹配不到日期。</p>
+          <p>如何避免出现上述情况呢？一般会采用分割符，如传入 <code>displayFormat</code> 为 <code>yyyy/M/D</code>，则 value 为
+            2019/1/2。因为时间选择组件不会匹配非关键字以外的字符，所以即可识别出正确的时间。</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo/demo4.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo/demo4.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="组件的只读与禁用">组件的只读与禁用</h4>
+  <div render="demo">
+    <date-demo5></date-demo5>
+  </div>
+  <div render="desc">
+    通过设置时间选择组件的 <code>disabled</code> 属性和 <code>readonly</code> 属性，即可设置组件的禁用和只读效果。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo/demo5.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="设置组件的大小">设置组件的大小</h4>
+  <div render="demo">
+    <date-demo6></date-demo6>
+  </div>
+  <div render="desc">
+    通过设置时间选择组件的 <code>size</code> 属性，即可控制时间选择组件的大小。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo/demo6.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<div class="doc-content">
+  <link rel="markdown" href="./date-example.component.md">
+</div>
+
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="./" fragment="选择一段日期">选择一段日期</a>
+    <a uiAnchorLink routerLink="./" fragment="选择一段时间">选择一段时间</a>
+    <a uiAnchorLink routerLink="./" fragment="同时限定日期范围和时间段">同时限定日期范围和时间段</a>
+    <a uiAnchorLink routerLink="./" fragment="日期及时间的格式化">日期及时间的格式化</a>
+    <a uiAnchorLink routerLink="./" fragment="组件的只读与禁用">组件的只读与禁用</a>
+    <a uiAnchorLink routerLink="./" fragment="设置组件的大小">设置组件的大小</a>
+    <a uiAnchorLink routerLink="./" fragment="输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="./" fragment="输出事件">输出事件</a>
+  </div>
+</div>
+

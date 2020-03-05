@@ -1,0 +1,284 @@
+<div class="doc">
+  <h3 uiAnchor id="简介">简介</h3>
+  <p>TBus 是一个所见即所得的富文本编辑器，致力于创造简单、美观、易扩展的新型 web 文本编辑工具。</p>
+  <p>和一般传统的富文本编辑器不同，TBus 不依赖于 DOM 的 contentEditable 属性，通过自实现抽象数据结构、光标、输入功能，较为完美的绕开了传统富文本很难解决的，如：光标位置、脏标签、相邻同样的标签不能自动合并、编辑数据污染输出结果等一系列问题。同时，因为脱离了传统的编辑模式，TBus 有着简洁的输入出结果。在对同样一段文本做数次格式化操作后，TBus 依然能不受影响的输出最简短的结果（<strong class="ui-color-primary">基本少一半的长度</strong>），而其它的编辑器，虽然有各种各样的优化，但因为设计上的问题，输入结果却不尽人意。所以，现在赶快试试吧！</p>
+  <div #editor></div>
+  <link rel="markdown" href="./home.md">
+  <h3 uiAnchor id="TBus-的亮点">TBus 的亮点</h3>
+  <h5 uiAnchor id="简洁的输出结果">简洁的输出结果</h5>
+<!--  <div class="ui-alert ui-alert-dark ui-alert-fill">-->
+<!--    <strong class="ui-color-danger">商业价值：</strong>-->
+<!--    <strong>更快的下载速度，更小的储存空间，更少的带宽</strong>-->
+<!--  </div>-->
+  <p>得益于先进的设计，TBus 有着对内容非同一般的优化能力。我们对目前相对比较流行的富文本编辑器做了相同测试（时间：2019-12-27）：<br>
+    <a href="http://www.wangeditor.com/" target="_blank">wangEditor</a>、
+    <a href="https://www.tiny.cloud/docs/demo/full-featured/" target="_blank">TinyMCE</a>、
+    <a href="http://ueditor.baidu.com/website/onlinedemo.html" target="_blank">UEditor</a>、
+    <a href="http://kindeditor.net/demo.php" target="_blank">KindEditor</a>、
+    <a href="https://textbox.io/" target="_blank">Textbox</a>、
+    <a href="https://ckeditor.com/ckeditor-5/demo/" target="_blank">CKEditor</a>、
+    <a href="https://quilljs.com/" target="_blank">Quill</a>，<br>在同样操作的情况下，对比输出的结果，可以看到，在任何情况下，TBus 编辑器都有着优异的输出结果，而其它编辑器，输出结果却不能总是保证是最优结果，测试对比结果如下：
+  </p>
+  <ui-panel class="ui-fill">
+    <ui-panel-header>
+      <form class="editor-tabs">
+        <label><strong>TBus</strong></label>
+        <label><ui-input type="checkbox" [(ngModel)]="editors.wangEditor" name="wangEditor" value="wangEditor"></ui-input> wangEditor</label>
+        <label><ui-input type="checkbox" [(ngModel)]="editors.TinyMCE" name="TinyMCE" value="TinyMCE"></ui-input> TinyMCE</label>
+        <label><ui-input type="checkbox" [(ngModel)]="editors.UEditor" name="UEditor" value="UEditor"></ui-input> UEditor</label>
+        <label><ui-input type="checkbox" [(ngModel)]="editors.KindEditor" name="KindEditor" value="KindEditor"></ui-input> KindEditor</label>
+        <label><ui-input type="checkbox" [(ngModel)]="editors.Textbox" name="Textbox" value="Textbox"></ui-input> Textbox</label>
+        <label><ui-input type="checkbox" [(ngModel)]="editors.CKEditor" name="CKEditor" value="CKEditor"></ui-input> CKEditor</label>
+        <label><ui-input type="checkbox" [(ngModel)]="editors.Quill" name="Quill" value="Quill"></ui-input> Quill</label>
+      </form>
+    </ui-panel-header>
+    <ui-panel-body>
+      <ui-timeline [ngClass]="editors">
+        <ui-timeline-item checked>
+          <div class="ui-timeline-content" style="font-weight: bold">
+            <div>TBus</div>
+            <div>wangEditor</div>
+            <div>TinyMCE</div>
+            <div>UEditor</div>
+            <div>KindEditor</div>
+            <div>Textbox</div>
+            <div>CKEditor</div>
+            <div>Quill</div>
+          </div>
+        </ui-timeline-item>
+        <ui-timeline-item checked>
+          <h4 class="ui-timeline-title">1、输入 0123456789ABCDEFG</h4>
+          <div class="ui-timeline-content">
+            <div>
+              <link rel="html" href="step1/TBus.html">
+              <link rel="markdown" href="step1/TBus.html">
+            </div>
+            <div>
+              <link rel="html" href="step1/wangEditor.html">
+              <link rel="markdown" href="step1/wangEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step1/TinyMCE.html">
+              <link rel="markdown" href="step1/TinyMCE.html">
+            </div>
+            <div>
+              <link rel="html" href="step1/UEditor.html">
+              <link rel="markdown" href="step1/UEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step1/KindEditor.html">
+              <link rel="markdown" href="step1/KindEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step1/Textbox.html">
+              <link rel="markdown" href="step1/Textbox.html">
+            </div>
+            <div>
+              <link rel="html" href="step1/CKEditor.html">
+              <link rel="markdown" href="step1/CKEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step1/Quill.html">
+              <link rel="markdown" href="step1/Quill.html">
+            </div>
+          </div>
+        </ui-timeline-item>
+        <ui-timeline-item checked>
+          <h4 class="ui-timeline-title">2、B~F 加粗</h4>
+          <div class="ui-timeline-content">
+            <div>
+              <link rel="html" href="step2/TBus.html">
+              <link rel="markdown" href="step2/TBus.html">
+            </div>
+            <div>
+              <link rel="html" href="step2/wangEditor.html">
+              <link rel="markdown" href="step2/wangEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step2/TinyMCE.html">
+              <link rel="markdown" href="step2/TinyMCE.html">
+            </div>
+            <div>
+              <link rel="html" href="step2/UEditor.html">
+              <link rel="markdown" href="step2/UEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step2/KindEditor.html">
+              <link rel="markdown" href="step2/KindEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step2/Textbox.html">
+              <link rel="markdown" href="step2/Textbox.html">
+            </div>
+            <div>
+              <link rel="html" href="step2/CKEditor.html">
+              <link rel="markdown" href="step2/CKEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step2/Quill.html">
+              <link rel="markdown" href="step2/Quill.html">
+            </div>
+          </div>
+        </ui-timeline-item>
+        <ui-timeline-item checked>
+          <h4 class="ui-timeline-title">3、2~6 加粗</h4>
+          <div class="ui-timeline-content">
+            <div>
+              <link rel="html" href="step3/TBus.html">
+              <link rel="markdown" href="step3/TBus.html">
+            </div>
+            <div>
+              <link rel="html" href="step3/wangEditor.html">
+              <link rel="markdown" href="step3/wangEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step3/TinyMCE.html">
+              <link rel="markdown" href="step3/TinyMCE.html">
+            </div>
+            <div>
+              <link rel="html" href="step3/UEditor.html">
+              <link rel="markdown" href="step3/UEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step3/KindEditor.html">
+              <link rel="markdown" href="step3/KindEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step3/Textbox.html">
+              <link rel="markdown" href="step3/Textbox.html">
+            </div>
+            <div>
+              <link rel="html" href="step3/CKEditor.html">
+              <link rel="markdown" href="step3/CKEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step3/Quill.html">
+              <link rel="markdown" href="step3/Quill.html">
+            </div>
+          </div>
+        </ui-timeline-item>
+        <ui-timeline-item checked>
+          <h4 class="ui-timeline-title">4、4~D 斜体</h4>
+          <div class="ui-timeline-content">
+            <div>
+              <link rel="html" href="step4/TBus.html">
+              <link rel="markdown" href="step4/TBus.html">
+            </div>
+            <div>
+              <link rel="html" href="step4/wangEditor.html">
+              <link rel="markdown" href="step4/wangEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step4/TinyMCE.html">
+              <link rel="markdown" href="step4/TinyMCE.html">
+            </div>
+            <div>
+              <link rel="html" href="step4/UEditor.html">
+              <link rel="markdown" href="step4/UEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step4/KindEditor.html">
+              <link rel="markdown" href="step4/KindEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step4/Textbox.html">
+              <link rel="markdown" href="step4/Textbox.html">
+            </div>
+            <div>
+              <link rel="html" href="step4/CKEditor.html">
+              <link rel="markdown" href="step4/CKEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step4/Quill.html">
+              <link rel="markdown" href="step4/Quill.html">
+            </div>
+          </div>
+        </ui-timeline-item>
+        <ui-timeline-item checked>
+          <h4 class="ui-timeline-title">5、6~B 加粗</h4>
+          <div class="ui-timeline-content">
+            <div>
+              <link rel="html" href="step5/TBus.html">
+              <link rel="markdown" href="step5/TBus.html">
+            </div>
+            <div>
+              <link rel="html" href="step5/wangEditor.html">
+              <link rel="markdown" href="step5/wangEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step5/TinyMCE.html">
+              <link rel="markdown" href="step5/TinyMCE.html">
+            </div>
+            <div>
+              <link rel="html" href="step5/UEditor.html">
+              <link rel="markdown" href="step5/UEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step5/KindEditor.html">
+              <link rel="markdown" href="step5/KindEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step5/Textbox.html">
+              <link rel="markdown" href="step5/Textbox.html">
+            </div>
+            <div>
+              <link rel="html" href="step5/CKEditor.html">
+              <link rel="markdown" href="step5/CKEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step5/Quill.html">
+              <link rel="markdown" href="step5/Quill.html">
+            </div>
+          </div>
+        </ui-timeline-item>
+        <ui-timeline-item checked>
+          <h4 class="ui-timeline-title">6、0~G 斜体</h4>
+          <div class="ui-timeline-content">
+            <div>
+              <link rel="html" href="step6/TBus.html">
+              <link rel="markdown" href="step6/TBus.html">
+            </div>
+            <div>
+              <link rel="html" href="step6/wangEditor.html">
+              <link rel="markdown" href="step6/wangEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step6/TinyMCE.html">
+              <link rel="markdown" href="step6/TinyMCE.html">
+            </div>
+            <div>
+              <link rel="html" href="step6/UEditor.html">
+              <link rel="markdown" href="step6/UEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step6/KindEditor.html">
+              <link rel="markdown" href="step6/KindEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step6/Textbox.html">
+              <link rel="markdown" href="step6/Textbox.html">
+            </div>
+            <div>
+              <link rel="html" href="step6/CKEditor.html">
+              <link rel="markdown" href="step6/CKEditor.html">
+            </div>
+            <div>
+              <link rel="html" href="step6/Quill.html">
+              <link rel="markdown" href="step6/Quill.html">
+            </div>
+          </div>
+        </ui-timeline-item>
+      </ui-timeline>
+    </ui-panel-body>
+  </ui-panel>
+  <h5 uiAnchor id="标题也可以去掉加粗状态">标题也可以去掉加粗状态</h5>
+  <p>传统的富文本编辑器，标题要么用 css 重置为不加粗，然后再加应用加粗样式； 要么干脆不管，让标题上加粗没有效果。不得不说，用传统的方法是比较难做到的，但这对 <strong>TBus</strong> 来说，当然不是问题。<strong>TBus</strong> 支持 h1 ~ h6、th 标签下的加粗和取消加粗功能。</p>
+</div>
+<div class="doc-quick-links">
+  <a uiAnchorLink routerLink="./" fragment="简介">简介</a>
+  <a uiAnchorLink routerLink="./" fragment="安装">安装</a>
+  <a uiAnchorLink routerLink="./" fragment="功能定制">功能定制</a>
+  <a uiAnchorLink routerLink="./" fragment="TBus-的亮点">TBus 的亮点</a>
+  <a uiAnchorLink class="h4" routerLink="./" fragment="简洁的输出结果">简洁的输出结果</a>
+  <a uiAnchorLink class="h4" routerLink="./" fragment="标题也可以去掉加粗状态">标题也可以去掉加粗状态</a>
+</div>

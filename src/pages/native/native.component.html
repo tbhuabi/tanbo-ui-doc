@@ -1,0 +1,19 @@
+<div class="body">
+  <div class="doc" [ngStyle]="{marginRight: rightDistance + 'px'}">
+    <ng-container *ngIf="data">
+      <doc-view [docData]="data"></doc-view>
+    </ng-container>
+  </div>
+
+  <div class="phone" [ngStyle]="{transform: 'scale('+transform+')'}">
+    <div class="native-demo">
+      <div class="status-bar">
+        <img src="../../assets/images/iPhone-X-with-Status-bar-icons-Free-PSD-Mockup.png" alt="">
+      </div>
+      <iframe #child [src]="src" frameborder="0"></iframe>
+    </div>
+    <div class="device"></div>
+  </div>
+
+</div>
+

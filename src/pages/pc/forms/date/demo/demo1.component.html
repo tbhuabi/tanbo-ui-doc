@@ -1,0 +1,14 @@
+<p>只允许选择既定的日期范围</p>
+<div>
+  <ui-input type="date" minDate="2019-8-20"
+            maxDate="2020-1-30" placeholder="请选择时间"></ui-input>
+</div>
+
+<p>选择任意一段日期</p>
+<div>
+  <ui-input type="date" [(ngModel)]="minDate"
+            [maxDate]="maxDate" placeholder="开始时间"></ui-input>
+  至
+  <ui-input type="date" [(ngModel)]="maxDate"
+            [minDate]="minDate" placeholder="结束时间"></ui-input>
+</div>

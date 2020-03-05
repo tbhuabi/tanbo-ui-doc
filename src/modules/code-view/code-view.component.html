@@ -1,0 +1,25 @@
+<div class="title">
+  <ng-content select="[render=title]"></ng-content>
+</div>
+<div #content [ngStyle]="open ? {maxHeight: 'initial', overflow: 'visible'} : {maxHeight: maxHeight + 'px', overflow: 'hidden'}">
+  <div class="content">
+    <div class="doc">
+      <div class="demo">
+        <ng-content select="[render=demo]"></ng-content>
+      </div>
+      <div class="desc">
+        <h6 class="desc-title"><span class="icon-pencil"></span> 说明</h6>
+        <ng-content select="[render=desc]"></ng-content>
+      </div>
+    </div>
+    <div class="code">
+      <ng-content select="[render=code]"></ng-content>
+    </div>
+  </div>
+</div>
+<div *ngIf="showToolbar" class="toolbar">
+  <div class="bg" *ngIf="!open"></div>
+  <div class="btn-wrap">
+    <button type="button" (click)="change()"><span [ngClass]="open ? 'ui-icon-arrow-top' : 'ui-icon-arrow-bottom'"></span></button>
+  </div>
+</div>

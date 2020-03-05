@@ -1,0 +1,138 @@
+@import "../../assets/scss/varibles";
+
+.banner {
+  position: relative;
+  padding-bottom: 20px;
+
+  .ui-container {
+    position: relative;
+  }
+
+  .bg {
+    background: url("../../assets/images/bg03.jpg") center center no-repeat fixed;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(21, 89, 165, 0.85);
+    }
+  }
+
+  .desc {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    strong {
+      font-size: 1.8em;
+    }
+  }
+}
+
+
+.top {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+h1 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+  margin: 0;
+
+  small {
+    font-size: 14px;
+    vertical-align: middle;
+    opacity: .7;
+  }
+}
+
+.nav {
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  a {
+    margin-left: 30px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+.quick-links {
+  text-align: center;
+  background-color: $color-lighter;
+  overflow: hidden;
+  padding: 50px 15px;
+
+  a {
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 24px;
+    min-width: 160px;
+  }
+}
+
+.advantage {
+  border-top: 1px solid $color-light;
+  border-bottom: 1px solid $color-light;
+  padding-bottom: 120px;
+
+  h3 {
+    text-align: center;
+    font-size: 44px;
+  }
+
+  .ui-col-sm-8 {
+    min-height: 120px;
+    display: flex;
+
+    .icon {
+      font-size: 40px;
+      width: 60px;
+    }
+
+    .desc {
+      padding-right: 20px;
+      flex: 1;
+    }
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.2;
+    }
+  }
+}
+
+.git-link {
+  text-align: center;
+  background-color: $color-lighter;
+  overflow: hidden;
+  padding: 50px 15px 100px;
+
+  a {
+    background-color: #fff;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 28px;
+    min-width: 160px;
+  }
+}

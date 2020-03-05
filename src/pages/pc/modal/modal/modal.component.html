@@ -1,0 +1,77 @@
+<h1>模态框</h1>
+<ui-divider></ui-divider>
+
+<code-view>
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="demo.html">
+  </div>
+  <div render="desc">
+    通过调用 <code>ModalController</code> 的 <code>show</code> 方法，并传入要弹出的模板，即可以弹窗形式显示模板中的内容。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="modal.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<code-view>
+  <h4 render="title" uiAnchor id="自定义头部和底部">自定义头部和底部</h4>
+  <div render="demo">
+    <modal-demo1></modal-demo1>
+  </div>
+  <div render="desc">
+    在 <code>ui-modal</code> 内，声明 <code>ui-modal-header</code> 或 <code>ui-modal-footer</code> 可以自动隐藏默认的头部或底部。
+    <div class="ui-alert">
+      <strong class="ui-color-success">提示：</strong>ui-modal-header 组件支持预置风格样式，可选样式有：
+      <ul>
+        <li><code>ui-dark</code></li>
+        <li><code>ui-primary</code></li>
+        <li><code>ui-info</code></li>
+        <li><code>ui-success</code></li>
+        <li><code>ui-warning</code></li>
+        <li><code>ui-danger</code></li>
+      </ul>
+    </div>
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo1.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo1.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<div class="doc-content">
+  <link rel="markdown" href="modal.md">
+</div>
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="./" fragment="自定义头部和底部">自定义头部和底部</a>
+    <a uiAnchorLink routerLink="./" fragment="ui-modal">ui-modal</a>
+    <a uiAnchorLink routerLink="./" fragment="输入属性">输入属性</a>
+  </div>
+</div>

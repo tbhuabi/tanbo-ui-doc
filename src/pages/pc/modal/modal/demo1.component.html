@@ -1,0 +1,16 @@
+<button type="button" class="ui-btn ui-btn-primary" (click)="showModal()">显示弹窗</button>
+
+<ng-template #demoModal>
+  <ui-modal>
+    <ui-modal-header class="ui-dark">这里是标题
+      <button class="ui-close" (click)="hideModal()"></button>
+    </ui-modal-header>
+    <ui-modal-body>
+      这里是内容
+    </ui-modal-body>
+    <ui-modal-footer>
+      <button type="button" class="ui-btn ui-btn-info" (click)="hideModal()">取消</button>
+      <button type="button" class="ui-btn ui-btn-primary" (click)="hideModal()">确定</button>
+    </ui-modal-footer>
+  </ui-modal>
+</ng-template>

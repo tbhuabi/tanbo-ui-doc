@@ -1,0 +1,172 @@
+<div class="doc-content3">
+  <link rel="markdown" href="start.component.md">
+</div>
+<h2 id="栅格布局" uiAnchor>栅格布局</h2>
+<p>tanbo/ui 将页面分为 24 列，通过 <code>.ui-row</code> 和 <code>.ui-col-*</code> 组合，实现栅格布局。</p>
+<link rel="markdown" href="grid.html">
+
+<div class="ui-container-fluid grid">
+  <div class="ui-row">
+    <div class="ui-col-xs-1">1</div>
+    <div class="ui-col-xs-1">2</div>
+    <div class="ui-col-xs-1">3</div>
+    <div class="ui-col-xs-1">4</div>
+    <div class="ui-col-xs-1">5</div>
+    <div class="ui-col-xs-1">6</div>
+    <div class="ui-col-xs-1">7</div>
+    <div class="ui-col-xs-1">8</div>
+    <div class="ui-col-xs-1">9</div>
+    <div class="ui-col-xs-1">10</div>
+    <div class="ui-col-xs-1">11</div>
+    <div class="ui-col-xs-1">12</div>
+    <div class="ui-col-xs-1">13</div>
+    <div class="ui-col-xs-1">14</div>
+    <div class="ui-col-xs-1">15</div>
+    <div class="ui-col-xs-1">16</div>
+    <div class="ui-col-xs-1">17</div>
+    <div class="ui-col-xs-1">18</div>
+    <div class="ui-col-xs-1">19</div>
+    <div class="ui-col-xs-1">20</div>
+    <div class="ui-col-xs-1">21</div>
+    <div class="ui-col-xs-1">22</div>
+    <div class="ui-col-xs-1">23</div>
+    <div class="ui-col-xs-1">24</div>
+  </div>
+  <div class="ui-row">
+    <div class="ui-col-xs-3">.ui-col-xs-3</div>
+    <div class="ui-col-xs-3">.ui-col-xs-3</div>
+    <div class="ui-col-xs-3">.ui-col-xs-3</div>
+    <div class="ui-col-xs-3">.ui-col-xs-3</div>
+    <div class="ui-col-xs-3">.ui-col-xs-3</div>
+    <div class="ui-col-xs-3">.ui-col-xs-3</div>
+    <div class="ui-col-xs-3">.ui-col-xs-3</div>
+    <div class="ui-col-xs-3">.ui-col-xs-3</div>
+  </div>
+  <div class="ui-row">
+    <div class="ui-col-xs-4">.ui-col-xs-4</div>
+    <div class="ui-col-xs-4">.ui-col-xs-4</div>
+    <div class="ui-col-xs-4">.ui-col-xs-4</div>
+    <div class="ui-col-xs-4">.ui-col-xs-4</div>
+    <div class="ui-col-xs-4">.ui-col-xs-4</div>
+    <div class="ui-col-xs-4">.ui-col-xs-4</div>
+  </div>
+  <div class="ui-row">
+    <div class="ui-col-xs-6">.ui-col-xs-6</div>
+    <div class="ui-col-xs-6">.ui-col-xs-6</div>
+    <div class="ui-col-xs-6">.ui-col-xs-6</div>
+    <div class="ui-col-xs-6">.ui-col-xs-6</div>
+  </div>
+  <div class="ui-row">
+    <div class="ui-col-xs-8">.ui-col-xs-8</div>
+    <div class="ui-col-xs-8">.ui-col-xs-8</div>
+    <div class="ui-col-xs-8">.ui-col-xs-8</div>
+  </div>
+  <div class="ui-row">
+    <div class="ui-col-xs-12">.ui-col-xs-12</div>
+    <div class="ui-col-xs-12">.ui-col-xs-12</div>
+  </div>
+</div>
+
+<h3 id="响应式布局" uiAnchor>响应式布局</h3>
+<div class="doc-content3">
+  <table>
+    <thead>
+    <tr>
+      <th>class</th>
+      <th>说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code>.ui-col-xs-</code> 加上 1-24</td>
+      <td>当分辨率大于 320px，都按比例占宽，否则宽度为 100%</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-sm-</code> 加上 1-24</td>
+      <td>当分辨率大于 768px，都按比例占宽，否则宽度为 100%</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-md-</code> 加上 1-24</td>
+      <td>当分辨率大于 992px，都按比例占宽，否则宽度为 100%</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-lg-</code> 加上 1-24</td>
+      <td>当分辨率大于 1200px，都按比例占宽，否则宽度为 100%</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-xl-</code> 加上 1-24</td>
+      <td>当分辨率大于 1600px，都按比例占宽，否则宽度为 100%</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<h3 id="列偏移" uiAnchor>列偏移</h3>
+<div class="doc-content3">
+  <table>
+    <thead>
+    <tr>
+      <th>class</th>
+      <th>说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code>.ui-col-xs-offset-</code> 加上 1-24</td>
+      <td>当分辨率大于 320px，都按比例向右偏移</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-sm-offset-</code> 加上 1-24</td>
+      <td>当分辨率大于 768px，都按比例向右偏移</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-md-offset-</code> 加上 1-24</td>
+      <td>当分辨率大于 992px，都按比例向右偏移</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-lg-offset-</code> 加上 1-24</td>
+      <td>当分辨率大于 1200px，都按比例向右偏移</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-xl-offset-</code> 加上 1-24</td>
+      <td>当分辨率大于 1600px，都按比例向右偏移</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-xs-pull-</code> 加上 1-24</td>
+      <td>当分辨率大于 320px，都按比例向左偏移</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-sm-pull-</code> 加上 1-24</td>
+      <td>当分辨率大于 768px，都按比例向左偏移</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-md-pull-</code> 加上 1-24</td>
+      <td>当分辨率大于 992px，都按比例向左偏移</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-lg-pull-</code> 加上 1-24</td>
+      <td>当分辨率大于 1200px，都按比例向左偏移</td>
+    </tr>
+    <tr>
+      <td><code>.ui-col-xl-pull-</code> 加上 1-24</td>
+      <td>当分辨率大于 1600px，都按比例向左偏移</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="简介">简介</a>
+    <a uiAnchorLink routerLink="./" fragment="生成项目">生成项目</a>
+    <a uiAnchorLink routerLink="./" fragment="安装-tanbo/ui">安装 tanbo/ui</a>
+    <a uiAnchorLink routerLink="./" fragment="在项目中导入-tanbo/ui">在项目中导入 tanbo/ui</a>
+    <a uiAnchorLink routerLink="./" fragment="通用样式">通用样式</a>
+    <a class="h4" uiAnchorLink routerLink="./" fragment="布局类">布局类</a>
+    <a class="h4" uiAnchorLink routerLink="./" fragment="文字类">文字类</a>
+    <a class="h4" uiAnchorLink routerLink="./" fragment="颜色类">颜色类</a>
+    <a uiAnchorLink routerLink="./" fragment="自定义样式">自定义样式</a>
+    <a uiAnchorLink routerLink="./" fragment="栅格布局">栅格布局</a>
+    <a class="h4" uiAnchorLink routerLink="./" fragment="响应式布局">响应式布局</a>
+    <a class="h4" uiAnchorLink routerLink="./" fragment="列偏移">列偏移</a>
+  </div>
+</div>

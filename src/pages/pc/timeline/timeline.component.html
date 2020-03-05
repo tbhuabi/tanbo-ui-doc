@@ -1,0 +1,59 @@
+<h1>时间轴</h1>
+<ui-divider></ui-divider>
+<code-view>
+  <h4 render="title" id="基础用法" uiAnchor>基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="demo.html">
+  </div>
+  <div render="desc">
+    常用于需要按时间顺序完成的工作流程，通过给 <code>ui-timeline-item</code> 标记为 <code>checked</code>，可设置为已完成状态。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" id="不同风格的组件" uiAnchor>不同风格的组件</h4>
+  <div render="demo">
+    <link rel="html" href="demo2.html">
+  </div>
+  <div render="desc">
+    给每一项添加不同的 class，可定制样式。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo2.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<div class="doc-content">
+  <link rel="markdown" href="doc.md">
+</div>
+<div class="doc-content3">
+  <link rel="markdown" href="css-doc.md">
+</div>
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="../" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="../" fragment="不同风格的组件">不同风格的组件</a>
+    <a uiAnchorLink routerLink="../" fragment="ui-timeline-item">ui-timeline-item</a>
+    <a uiAnchorLink routerLink="../" class="h4" fragment="输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="../" class="h4" fragment="css-说明">css 说明</a>
+  </div>
+</div>

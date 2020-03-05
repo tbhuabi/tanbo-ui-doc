@@ -1,0 +1,41 @@
+<h1>Markdown 编辑器</h1>
+<ui-divider></ui-divider>
+
+<code-view>
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="./demo.html">
+  </div>
+  <div render="desc">
+    无须其它配置，通过 <code>[(ngModel)]</code> 绑定值，即可声明一个 Markdown 编辑器，并更新其内容。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./markdown-editor-example.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<div class="doc-content">
+  <link rel="markdown" href="doc.md">
+</div>
+
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="./" fragment="输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="./" fragment="输出事件">输出事件</a>
+  </div>
+</div>
+

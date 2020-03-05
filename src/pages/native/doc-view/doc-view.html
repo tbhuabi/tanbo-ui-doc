@@ -1,0 +1,11 @@
+<div *ngIf="data.length">
+  <ui-tab class="ui-panel">
+    <ui-tab-bar>
+      <ui-tab-button *ngFor="let item of data">{{ item.title }}</ui-tab-button>
+    </ui-tab-bar>
+    <ui-tab-view>
+      <ui-tab-view-item *ngFor="let item of data" [innerHTML]="item.html"></ui-tab-view-item>
+    </ui-tab-view>
+  </ui-tab>
+</div>
+<div *ngIf="docHtml" class="doc-content doc-content4" [innerHTML]="docHtml"></div>

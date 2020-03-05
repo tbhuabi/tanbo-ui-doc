@@ -1,0 +1,37 @@
+<div class="ui-row">
+  <div class="ui-col-md-12">
+    <link rel="markdown" href="./doc.md">
+  </div>
+  <div class="ui-col-md-12">
+    <div class="ui-clearfix">
+      <div class="ui-pull-left">
+        <div class="demo">
+          <div>
+            <div [ngStyle]="{left: left}"></div>
+          </div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas #canvas1></canvas>
+          <canvas #canvas2></canvas>
+        </div>
+      </div>
+      <div class="ui-pull-left demo-control">
+        <div>自定义参数，以 `,` 号隔开</div>
+        <p>
+          <textarea style="min-height: 130px" uiInput [(ngModel)]="args"></textarea>
+        </p>
+        <div class="ui-clearfix">
+          <div class="ui-pull-left">
+            {{ progress }}
+          </div>
+          <div class="ui-pull-right">
+            <button class="ui-btn ui-btn-primary" type="button" (click)="run()">start</button>
+          </div>
+        </div>
+        <p>
+          <ui-input type="range" [(ngModel)]="progress" (uiChange)="change($event)"></ui-input>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

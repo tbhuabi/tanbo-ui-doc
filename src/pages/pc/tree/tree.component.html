@@ -1,0 +1,69 @@
+<h1>树形组件</h1>
+<ui-divider></ui-divider>
+
+<code-view>
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="demo.html">
+  </div>
+  <div render="desc">
+    只需要按正确层级关系，嵌套 <code>ui-tree</code>、<code>ui-tree-item</code>、<code>ui-tree-inner</code> 即可实现树布局。<code>ui-tree-expand</code> 用来控制同一个 <code>ui-tree-item</code> 下的 <code>ui-tree</code> 是否展开。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<code-view>
+  <h4 render="title" uiAnchor id="动态渲染树节点">动态渲染树节点</h4>
+  <div render="demo">
+    <tree-demo1></tree-demo1>
+  </div>
+  <div render="desc">
+    利用 Angular 的模板功能，可以方便的递归渲染出树状结构。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo1.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo1.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<div class="doc-content">
+  <link rel="markdown" href="doc.md">
+</div>
+
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="../" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="../" fragment="动态渲染树节点">动态渲染树节点</a>
+    <a uiAnchorLink routerLink="../" fragment="ui-tree">ui-tree</a>
+    <a uiAnchorLink routerLink="../" class="h4" fragment="ui-tree-输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="../" fragment="ui-tree-inner">ui-tree-inner</a>
+    <a uiAnchorLink routerLink="../" class="h4" fragment="ui-tree-inner-输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="../" fragment="ui-tree-expand">ui-tree-expand</a>
+    <a uiAnchorLink routerLink="../" class="h4" fragment="ui-tree-expand-输入属性">输入属性</a>
+  </div>
+</div>
+
+

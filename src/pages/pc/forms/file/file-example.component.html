@@ -1,0 +1,104 @@
+<h1>文件上传</h1>
+<ui-divider></ui-divider>
+<code-view>
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="./demo.html">
+  </div>
+  <div render="desc">
+    文件上传组件，用于向服务器上传文件，同时支持上传进度条，上传成功、上传失败等事件。
+    <div class="ui-alert">
+      <strong class="ui-color-success">提示：</strong>设置 <code>placeholder</code> 属性，可以更改组件上的提示文字。
+    </div>
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Component</ui-tab-button>
+        <ui-tab-button>Service</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./file-example.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./file-example.service.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="不同风格的组件">不同风格的组件</h4>
+  <div render="demo">
+    <link rel="html" href="./demo1.html">
+  </div>
+  <div render="desc">
+    设置不同的 class，让组件呈现不同的风格。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo1.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="兼听上传进度及其它事件">兼听上传进度及其它事件</h4>
+  <div render="demo">
+    <file-demo2></file-demo2>
+  </div>
+  <div render="desc">
+    监听组件的各个事件，可以灵活定制功能，如自定义进度条等。
+    <div class="ui-alert">
+      <strong class="ui-color-success">提示：</strong>file 组件自带有进度条效果，也可以使用 <code>ui-progress</code> 展示上传进度。
+    </div>
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>Service</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo2.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo2.service.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo2.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<div class="doc-content">
+  <link rel="markdown" href="doc.md">
+</div>
+
+<div class="doc-content2">
+  <link rel="markdown" href="css.md">
+</div>
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="./" fragment="不同风格的组件">不同风格的组件</a>
+    <a uiAnchorLink routerLink="./" fragment="兼听上传进度及其它事件">兼听上传进度及其它事件</a>
+    <a uiAnchorLink routerLink="./" fragment="输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="./" fragment="输出事件">输出事件</a>
+    <a uiAnchorLink routerLink="./" fragment="css-样式">css 样式</a>
+  </div>
+</div>

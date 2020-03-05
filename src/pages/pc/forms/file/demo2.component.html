@@ -1,0 +1,9 @@
+<ui-input type="file"
+          name="filename"
+          (uiUploading)="uploading($event)"
+          (uiUploaded)="uploaded($event)"
+          (uiUploadError)="uploadError($event)"
+          (uiChange)="change($event)"
+          (uiUploadStart)="uploadStart()"
+          [uploader]="uploadFile"
+          class="ui-primary"></ui-input>

@@ -1,0 +1,46 @@
+<div class="top">
+  <h1 class="brand" [class.thumbnail]="thumbnail">Brand</h1>
+  <div class="ui-pull-left ui-container-fluid">
+    <button class="ui-btn ui-btn-dark ui-btn-sm" type="button" (click)="change()">
+      <span class="icon-list"></span>
+    </button>
+  </div>
+</div>
+<ui-scroll [class.thumbnail]="thumbnail" (wheel)="$event.preventDefault()">
+  <ui-nav [thumbnail]="thumbnail">
+    <ui-nav-item>
+      <a uiNavInner><ui-nav-thumbnail><span class="icon-pencil"></span></ui-nav-thumbnail>导航一</a>
+    </ui-nav-item>
+    <ui-nav-item>
+      <a uiNavInner><ui-nav-thumbnail><span class="icon-hammer"></span></ui-nav-thumbnail>导航二</a>
+    </ui-nav-item>
+    <ui-nav-item>
+      <ui-nav-inner><ui-nav-thumbnail><span class="icon-search"></span></ui-nav-thumbnail>导航三</ui-nav-inner>
+      <ui-nav>
+        <ui-nav-item>
+          <a uiNavInner>导航a</a>
+        </ui-nav-item>
+        <ui-nav-item>
+          <a uiNavInner>导航b</a>
+        </ui-nav-item>
+        <ui-nav-item>
+          <a uiNavInner>导航c</a>
+        </ui-nav-item>
+      </ui-nav>
+    </ui-nav-item>
+    <ui-nav-item>
+      <ui-nav-inner><ui-nav-thumbnail><span class="icon-list"></span></ui-nav-thumbnail>导航四</ui-nav-inner>
+      <ui-nav>
+        <ui-nav-item>
+          <a uiNavInner>导航a</a>
+        </ui-nav-item>
+        <ui-nav-item>
+          <a uiNavInner>导航b</a>
+        </ui-nav-item>
+        <ui-nav-item>
+          <a uiNavInner>导航c</a>
+        </ui-nav-item>
+      </ui-nav>
+    </ui-nav-item>
+  </ui-nav>
+</ui-scroll>

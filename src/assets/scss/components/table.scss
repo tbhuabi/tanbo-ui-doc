@@ -1,0 +1,94 @@
+.doc-content {
+  [id$=输入属性] + table {
+    @extend .ui-table;
+    @extend .ui-table-bordered;
+    //@extend .ui-table-striped;
+    //@extend .ui-table-condensed;
+    @extend .ui-table-hover;
+
+    //td:nth-child(1) {
+    //  width: 200px;
+    //}
+
+    td:nth-child(2) {
+      //width: 170px;
+      color: $color-primary;
+      font-weight: bold;
+
+      code {
+        border: none;
+        background: none;
+      }
+    }
+  }
+
+  [id$=输出事件] + table {
+    @extend .ui-table;
+    @extend .ui-table-bordered;
+    //@extend .ui-table-striped;
+    //@extend .ui-table-condensed;
+    @extend .ui-table-hover;
+
+    td:nth-child(1) {
+      width: 200px;
+    }
+
+    td:nth-child(3) {
+      width: 170px;
+      color: $color-primary;
+      font-weight: bold;
+
+      code {
+        border: none;
+        background: none;
+      }
+    }
+  }
+}
+
+.doc-content2 {
+  table {
+    @extend .ui-table;
+    @extend .ui-table-bordered;
+    @extend .ui-table-hover;
+
+    td:nth-child(1) {
+      width: 200px;
+    }
+  }
+}
+
+.doc-content3 {
+  table {
+    @extend .ui-table;
+    @extend .ui-table-bordered;
+    @extend .ui-table-hover;
+
+    td:nth-child(1) {
+      width: 300px;
+    }
+  }
+}
+
+.doc-content4 {
+  table {
+    @extend .ui-table;
+    @extend .ui-table-bordered;
+    @extend .ui-table-hover;
+
+    td:nth-child(1) {
+      width: 300px;
+    }
+
+    td:nth-child(2) {
+      width: 170px;
+      color: $color-primary;
+      font-weight: bold;
+
+      code {
+        border: none;
+        background: none;
+      }
+    }
+  }
+}

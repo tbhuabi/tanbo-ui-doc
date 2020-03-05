@@ -1,0 +1,26 @@
+.doc-quick-links {
+  position: fixed;
+  right: 0;
+  top: 60px;
+  bottom: 0;
+  width: 210px;
+  padding: 30px 10px;
+  font-size: 14px;
+  line-height: 1.6em;
+  overflow-y: auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  .h4 {
+    text-indent: 1em;
+    font-size: 13px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid $color-light;
+  }
+}

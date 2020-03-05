@@ -1,0 +1,26 @@
+<table class="ui-table ui-table-condensed ui-table-bordered">
+  <thead>
+  <tr>
+    <th>说明</th>
+    <th>组件配置</th>
+    <th>选择结果</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>选择年月</td>
+    <td><ui-input type="date" size="sm" format="yyyy-MM" [(ngModel)]="date1" placeholder="请选择"></ui-input></td>
+    <td>{{ date1 }}</td>
+  </tr>
+  <tr>
+    <td>选择时分秒</td>
+    <td><ui-input type="date" size="sm" format="hh:mm:ss" [(ngModel)]="date2" placeholder="请选择"></ui-input></td>
+    <td>{{ date2 }}</td>
+  </tr>
+  <tr>
+    <td>特殊格式化</td>
+    <td><ui-input type="date" size="sm" format="yyyy-MM-dd 00:00:00" displayFormat="yyyy-MM-dd" [(ngModel)]="date3" placeholder="请选择"></ui-input></td>
+    <td>{{ date3 }}</td>
+  </tr>
+  </tbody>
+</table>

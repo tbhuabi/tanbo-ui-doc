@@ -1,0 +1,9 @@
+<button type="button" class="ui-btn ui-btn-primary" (click)="showModal()">显示弹窗</button>
+
+<ng-template #demoModal>
+  <ui-modal title="Demo 标题" (uiClose)="hideModal()" (uiConfirm)="hideModal()">
+    <ui-modal-body>
+      这里是内容
+    </ui-modal-body>
+  </ui-modal>
+</ng-template>

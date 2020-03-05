@@ -1,0 +1,106 @@
+<h1>级联选择器</h1>
+<ui-divider></ui-divider>
+<code-view>
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="demo.html">
+  </div>
+  <div render="desc">
+    通过组件的 <code>options</code> 属性传入 <code>PickerCell[]</code> 类型数据，即可实现一个级联选择器。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>Address</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./picker-example.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./address-demo.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="数据回填">数据回填</h4>
+  <div render="demo">
+    <picker-demo1></picker-demo1>
+  </div>
+  <div render="desc">
+    由于 <code>picker</code> 组件的复杂性，要实现数据回填，需要传入的数据结构和 <code>picker</code> 组件输出的数据结构一致才可以实现。所以，在通过 <code>value</code> 或 <code>ngModel</code> 绑定组件值之前，需要初始化好相关数据。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>Address</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./picker-demo1.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./address-demo.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./picker-demo1.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<h3 uiAnchor id="数据结构">数据结构</h3>
+
+picker 组件正常工作，需要传入正确的数据结构，示例如下。
+<link rel="markdown" href="address-demo.ts">
+
+<code-view>
+  <h4 render="title" uiAnchor id="异步加载">异步加载</h4>
+  <div render="demo">
+    <picker-demo></picker-demo>
+  </div>
+  <div render="desc">
+    <link rel="markdown" href="async.md">
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="picker-demo.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="picker-demo.component.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+
+</code-view>
+
+<div class="doc-content">
+  <link rel="markdown" href="doc.md">
+</div>
+
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="./" fragment="数据回填">数据回填</a>
+    <a uiAnchorLink routerLink="./" fragment="数据结构">数据结构</a>
+    <a uiAnchorLink routerLink="./" fragment="异步加载">异步加载</a>
+    <a uiAnchorLink routerLink="./" fragment="输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="./" fragment="输出事件">输出事件</a>
+  </div>
+</div>

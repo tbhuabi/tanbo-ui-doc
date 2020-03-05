@@ -1,0 +1,16 @@
+.doc-content {
+  ::ng-deep td:nth-child(1), ::ng-deep th:nth-child(1) {
+    width: 30%;
+  }
+}
+
+.grid {
+  .ui-row {
+    background-color: #f9f9f9;
+    line-height: 30px;
+    margin-bottom: 10px;
+    > div:nth-child(2n) {
+      background-color: #dbe3e7;
+    }
+  }
+}

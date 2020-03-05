@@ -1,0 +1,133 @@
+<div class="doc">
+  <h2 uiAnchor id="架构设计">架构设计</h2>
+  <div>
+    <p>TBus 采用 MVC 设计，将 DOM 数据转换为抽象的 Fragment 对象，并通过自实现 Selection，隔离了浏览器的 Selection 及 Range
+      对象，使后续功能开发，再也不用关心不同浏览器的差异，整体设计架构如下：</p>
+    <p class="ui-text-center">
+      <img src="../../../assets/images/幻灯片2.png" alt="架构设计图">
+    </p>
+  </div>
+  <h2 uiAnchor id="关键名词释义">关键名词释义</h2>
+  <div class="nouns">
+    <h4 uiAnchor id="工具条">工具条</h4>
+    <table class="ui-table ui-table-bordered">
+      <thead>
+      <tr>
+        <th style="width: 140px">名词</th>
+        <th style="width: 160px">中文名</th>
+        <th>解释</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>Handler</code></td>
+        <td>富文本操作工具</td>
+        <td>一个包含了生命周期（Hooks）、命令（Commander）、匹配器（Matcher）、缓存（CacheData）及工具条 UI 的集合类</td>
+      </tr>
+      <tr>
+        <td><code>Hooks</code></td>
+        <td>生命周期</td>
+        <td>定制编辑器各个生命周期的行为</td>
+      </tr>
+      <tr>
+        <td><code>Commander</code></td>
+        <td>命令</td>
+        <td>实现富文本格式化的命令工具</td>
+      </tr>
+      <tr>
+        <td><code>Matcher</code></td>
+        <td>匹配器</td>
+        <td>富文本状态匹配器，用于查询所有 Handler 在选区（Selection）中的状态，用于查询一个 DOM 节点或抽象数据（CacheData）与所有 Handler 的匹配结果</td>
+      </tr>
+      <tr>
+        <td><code>Forms</code></td>
+        <td>表单</td>
+        <td>定制表单工具条的类</td>
+      </tr>
+      </tbody>
+    </table>
+    <h4 uiAnchor id="渲染器">渲染器</h4>
+    <table class="ui-table ui-table-bordered">
+      <thead>
+      <tr>
+        <th style="width: 140px">名词</th>
+        <th style="width: 160px">中文名</th>
+        <th>解释</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>Differ</code></td>
+        <td>差异算法</td>
+        <td>用于比较上一次虚拟 DOM 和当前虚拟 DOM 的差异</td>
+      </tr>
+      <tr>
+        <td><code>Renderer</code></td>
+        <td>渲染器</td>
+        <td>适用于当前平台的 UI 渲染器</td>
+      </tr>
+      <tr>
+        <td><code>Selection</code></td>
+        <td>选区</td>
+        <td>用户在富文本选中的区域</td>
+      </tr>
+      <tr>
+        <td><code>Events</code></td>
+        <td>事件</td>
+        <td>用户在富文本操作时发生的有效动作</td>
+      </tr>
+      </tbody>
+    </table>
+    <h4 uiAnchor id="数据">数据</h4>
+    <table class="ui-table ui-table-bordered">
+      <thead>
+      <tr>
+        <th style="width: 140px">名词</th>
+        <th style="width: 160px">中文名</th>
+        <th>解释</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>Fragment</code></td>
+        <td>片段</td>
+        <td>一段结构化的数据，包含内容（Contents）和格式化数据（FormatMap）</td>
+      </tr>
+      <tr>
+        <td><code>Single</code></td>
+        <td>单节点</td>
+        <td>单节点，如图片、音频、视频等，也包含自身的格式化数据</td>
+      </tr>
+      <tr>
+        <td><code>Contents</code></td>
+        <td>内容</td>
+        <td>一段结构化的数据，包含：文本、单节点（Single）、子片段、格式化数据（FormatMap）</td>
+      </tr>
+      <tr>
+        <td><code>FormatMap</code></td>
+        <td>格式矩阵</td>
+        <td>格式化数据，用于储存一个版本或单节点的格式化信息</td>
+      </tr>
+      <tr>
+        <td><code>Virtual DOM</code></td>
+        <td>虚拟 DOM</td>
+        <td>抽象数据生成的一个类 DOM 结构的树</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <h2 uiAnchor id="交互流程">交互流程</h2>
+  <div>
+    <p class="ui-text-center">
+      <img src="../../../assets/images/幻灯片3.png" alt="交互流程图">
+    </p>
+  </div>
+</div>
+<div class="doc-quick-links">
+  <a uiAnchorLink routerLink="./" fragment="架构设计">架构设计</a>
+  <a uiAnchorLink routerLink="./" fragment="关键名词释义">关键名词释义</a>
+  <a uiAnchorLink class="h4" routerLink="./" fragment="工具条">工具条</a>
+  <a uiAnchorLink class="h4" routerLink="./" fragment="渲染器">渲染器</a>
+  <a uiAnchorLink class="h4" routerLink="./" fragment="数据">数据</a>
+  <a uiAnchorLink routerLink="./" fragment="交互流程">交互流程</a>
+</div>

@@ -1,0 +1,32 @@
+<ui-app>
+  <header [class.show]="showHeader">
+    <div class="left">
+      <h1 class="ui-container-fluid ui-text-center">
+        <a href="javascript:;" routerLink="/"><img class="logo" src="../assets/images/logo2.png"></a>
+      </h1>
+    </div>
+    <div class="right ui-clearfix">
+      <nav class="ui-pull-left ui-clearfix">
+        <a href="javascript:;" routerLinkActive="active" routerLink="/ui">PC端</a>
+        <a href="javascript:;" routerLinkActive="active" routerLink="/native">移动端</a>
+        <a href="javascript:;" routerLinkActive="active" routerLink="/bezier">贝塞尔曲线</a>
+        <a href="javascript:;" routerLinkActive="active" routerLink="/tbus">TBus 富文本编辑器</a>
+      </nav>
+      <div class="ui-pull-right" *ngIf="showBtn">
+        <div class="ui-btn-group">
+          <a [href]="demoUrl" class="ui-btn ui-btn-primary" target="_blank">在模拟器中打开</a>&nbsp;
+          <a href="https://github.com/tbhuabi/tanbo-ui-native" class="ui-btn ui-btn-success" target="_blank">Github</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="page-content" [class.show]="showHeader">
+    <router-outlet></router-outlet>
+  </div>
+  <footer>
+    <div class="ui-container-fluid">
+      <span>备案号：浙ICP备17024329号</span>
+      <span>公安部备案号：33010202001172</span>
+    </div>
+  </footer>
+</ui-app>

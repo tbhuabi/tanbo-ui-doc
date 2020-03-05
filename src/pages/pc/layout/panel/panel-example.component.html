@@ -1,0 +1,56 @@
+<h1>面板</h1>
+<ui-divider></ui-divider>
+
+<code-view>
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="./demo.html">
+  </div>
+  <div render="desc">
+    用于展示一大块带有标题的内容。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="不同风格的组件">不同风格的组件</h4>
+  <div render="demo">
+    <link rel="html" href="./demo1.html">
+  </div>
+  <div render="desc">
+    用于展示一大块带有标题的内容。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo1.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<div class="doc-content3">
+  <link rel="markdown" href="./doc.md">
+</div>
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="./" fragment="不同风格的组件">不同风格的组件</a>
+    <a uiAnchorLink routerLink="./" fragment="样式控制">样式控制</a>
+  </div>
+</div>

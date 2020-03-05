@@ -1,0 +1,124 @@
+<h1>下拉选择器</h1>
+<ui-divider></ui-divider>
+<code-view>
+  <h4 render="title" uiAnchor id="基础用法">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="./demo.html">
+  </div>
+  <div render="desc">
+    用于弥补原生 select 不能设置风格、placeholder 等问题。
+    <div class="ui-alert ui-alert-gray">
+      <strong class="ui-color-success">提示：</strong>如果 <code>ui-option</code> 没有设置 value，则会取其 innerText 作为 value。
+    </div>
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./select-example.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="设置不同大小的选择框">设置不同大小的选择框</h4>
+  <div render="demo">
+    <link rel="html" href="./demo1.html">
+  </div>
+  <div render="desc">
+    通过 size 属性，设置组件显示大小。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo1.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="设置组件的只读与禁用">设置组件的只读与禁用</h4>
+  <div render="demo">
+    <link rel="html" href="./demo2.html">
+  </div>
+  <div render="desc">
+    通过 readonly 和 disabled 属性，设置组件的只读与禁用状态。
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo2.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<code-view>
+  <h4 render="title" uiAnchor id="设置默认选项与禁用部分选项">设置默认选项与禁用部分选项</h4>
+  <div render="demo">
+    <link rel="html" href="./demo3.html">
+  </div>
+  <div render="desc">
+    <p>
+      设置 <code>ui-select</code> 的 <code>selectedIndex</code> 属性，可以设定默认选中项。当选项较多，也可直接设置某一项的 <code>selected</code>
+      属性，让其默认选中。
+    </p>
+    <p>设置 <code>ui-option</code> 的 <code>disabled</code> 属性，可以让其禁用且不可选。</p>
+    <div class="ui-alert ui-alert-dark ui-alert-fill">
+      <strong class="ui-color-danger">注意：</strong>当 <code>selectedIndex</code>、<code>selected</code> 和
+      <code>ngModel</code> 同时存在时，<code>ngModel</code> 绑定的值会覆盖 <code>selectedIndex</code> 选中的选项。三者的优先级关系如下：
+      <div>
+        <code>ngModel</code> <strong class="ui-color-danger"> &gt; </strong> <code>ui-option</code> 的
+        <code>selected</code> 属性<strong class="ui-color-danger"> &gt; </strong> <code>ui-select</code> 的 <code>selectedIndex</code>
+        属性。
+      </div>
+    </div>
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="./demo3.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+<div class="doc-content">
+  <link rel="markdown" href="./select-example.component.md">
+</div>
+
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="./" fragment="设置不同大小的选择框">设置不同大小的选择框</a>
+    <a uiAnchorLink routerLink="./" fragment="设置组件的只读与禁用">设置组件的只读与禁用</a>
+    <a uiAnchorLink routerLink="./" fragment="设置默认选项与禁用部分选项">设置默认选项与禁用部分选项</a>
+    <a uiAnchorLink routerLink="./" fragment="ui-select-组件">ui-select-组件</a>
+    <a uiAnchorLink routerLink="./" class="h4" fragment="ui-select-输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="./" class="h4" fragment="ui-select-输出事件">输出事件</a>
+    <a uiAnchorLink routerLink="./" fragment="ui-option-组件">ui-option-组件</a>
+    <a uiAnchorLink routerLink="./" class="h4" fragment="ui-option-输入属性">输入属性</a>
+    <a uiAnchorLink routerLink="./" class="h4" fragment="ui-option-输出事件">输出事件</a>
+  </div>
+</div>

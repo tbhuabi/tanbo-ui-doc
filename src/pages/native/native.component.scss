@@ -1,0 +1,71 @@
+@import "../../assets/scss/varibles";
+
+.doc {
+  padding-left: 30px;
+  margin-right: 400px;
+}
+
+.body {
+  padding-bottom: 50px;
+}
+
+.phone {
+  position: fixed;
+  right: 20px;
+  top: 70px;
+  width: 366px;
+  height: 734px;
+  transform-origin: 100% 0;
+  > .link {
+    text-align: center;
+    padding-top: 30px;
+    .btn {
+      border-radius: 4px;
+    }
+  }
+  > .native-demo {
+    width: 320px;
+    height: 689px;
+    background-color: #fff;
+    position: relative;
+    margin-top: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    .status-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      img {
+        width: 320px;
+      }
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .device {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url("../../assets/images/hero_premiere_hardware_large.png") top center no-repeat;
+    background-size: cover;
+    z-index: 2;
+    pointer-events: none;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 6px;
+      border-radius: 3px;
+      background-color: rgba(0, 0, 0, .5);
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

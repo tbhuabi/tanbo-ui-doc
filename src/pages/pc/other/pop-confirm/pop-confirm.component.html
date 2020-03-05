@@ -1,0 +1,105 @@
+<h1>操作提示</h1>
+<ui-divider></ui-divider>
+
+<code-view>
+  <h4 render="title">基础用法</h4>
+  <div render="demo">
+    <link rel="html" href="demo.html">
+  </div>
+  <div render="desc">
+    <p>设置 <code>popConfirmPosition</code> 属性不同的值，可以让提示弹窗显示在不同位置。</p>
+    <div>
+      <table class="pop-confirm-demo">
+        <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="topLeft" class="ui-btn ui-btn-dark">topLeft</button>
+          </td>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="topCenter" class="ui-btn ui-btn-dark">topCenter</button>
+          </td>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="topRight" class="ui-btn ui-btn-dark">topRight</button>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="leftTop" class="ui-btn ui-btn-dark">leftTop</button>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="rightTop" class="ui-btn ui-btn-dark">rightTop</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="leftCenter" class="ui-btn ui-btn-dark">leftCenter</button>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="rightCenter" class="ui-btn ui-btn-dark">rightCenter</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="leftBottom" class="ui-btn ui-btn-dark">leftBottom</button>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="rightBottom" class="ui-btn ui-btn-dark">rightBottom</button>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="bottomLeft" class="ui-btn ui-btn-dark">bottomLeft</button>
+          </td>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="bottomCenter" class="ui-btn ui-btn-dark">bottomCenter
+            </button>
+          </td>
+          <td>
+            <button uiPopConfirm="是否删除？" popConfirmPosition="bottomRight" class="ui-btn ui-btn-dark">bottomRight</button>
+          </td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div render="code">
+    <ui-tab>
+      <ui-tab-bar>
+        <ui-tab-button>Typescript</ui-tab-button>
+        <ui-tab-button>HTML</ui-tab-button>
+      </ui-tab-bar>
+      <ui-tab-view>
+        <ui-tab-view-item>
+          <link rel="markdown" href="pop-confirm.component.ts">
+        </ui-tab-view-item>
+        <ui-tab-view-item>
+          <link rel="markdown" href="demo.html">
+        </ui-tab-view-item>
+      </ui-tab-view>
+    </ui-tab>
+  </div>
+</code-view>
+
+<div class="doc-content">
+  <link rel="markdown" href="pop-confirm.md">
+</div>
+<div class="doc-quick-links">
+  <div class="anchor-links">
+    <a uiAnchorLink routerLink="./" fragment="基础用法">基础用法</a>
+    <a uiAnchorLink routerLink="./" fragment="输入属性">输入属性</a>
+  </div>
+</div>

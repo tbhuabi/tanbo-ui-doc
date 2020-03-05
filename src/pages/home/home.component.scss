@@ -1,0 +1,67 @@
+@import "../../assets/scss/varibles";
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+  margin-left: -10px;
+}
+
+h1 {
+  font-size: 50px;
+  padding-top: 50px;
+  margin-bottom: 20px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.desc {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 18px;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, .3);
+}
+
+.links {
+  margin-bottom: 40px;
+  font-size: 15px;
+  a {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+my-starry-sky, my-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .2;
+}
+
+.bg {
+  position: fixed;
+  left: -20px;
+  right: -20px;
+  top: -20px;
+  bottom: 0;
+  z-index: -2;
+  background: url("../../assets/images/9.jpg") center center no-repeat;
+  background-size: cover;
+  opacity: .7;
+  filter: blur(20px);
+}
