@@ -6,5 +6,5 @@ zip
 .idea
 *.swp
 *.swo
-
+package-lock.json
 typings/

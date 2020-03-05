@@ -1,4 +1,4 @@
-import { AfterViewInit, Input, Component, ElementRef, HostBinding, ViewChild } from '@angular/core';
+import { AfterViewInit, Input, Component, ElementRef, HostBinding, ViewChild, ContentChild } from '@angular/core';
 
 @Component({
   selector: 'code-view',

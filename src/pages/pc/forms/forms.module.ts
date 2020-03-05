@@ -7,6 +7,7 @@ import { UIModule } from '@tanbo/ui';
 
 import { routes } from './forms.routes';
 
+import { BaseStyleComponent } from './base-style/base-style.component';
 import { ButtonExampleComponent } from './button/button-example.component';
 import { InputExampleComponent } from './input/input-example.component';
 import { PaginationExampleComponent } from './pagination/pagination-example.component';
@@ -42,6 +43,7 @@ import { PickerDemo1Component } from './picker/picker-demo1.component';
     ComponentsModule
   ],
   declarations: [
+    BaseStyleComponent,
     ButtonExampleComponent,
     InputExampleComponent,
     PaginationExampleComponent,

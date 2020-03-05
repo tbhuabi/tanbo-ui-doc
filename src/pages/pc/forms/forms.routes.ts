@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { BaseStyleComponent } from './base-style/base-style.component';
 import { ButtonExampleComponent } from './button/button-example.component';
 import { InputExampleComponent } from './input/input-example.component';
 import { PaginationExampleComponent } from './pagination/pagination-example.component';
@@ -15,6 +16,9 @@ import { SwitchExampleComponent } from './switch/switch-example.component';
 import { MarkdownEditorExampleComponent } from './markdown-editor/markdown-editor-example.component';
 
 export const routes: Routes = [{
+  path: 'base-style',
+  component: BaseStyleComponent
+}, {
   path: 'button',
   component: ButtonExampleComponent
 }, {

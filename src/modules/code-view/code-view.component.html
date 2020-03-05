@@ -2,6 +2,7 @@
   <ng-content select="[render=title]"></ng-content>
 </div>
 <div #content [ngStyle]="open ? {maxHeight: 'initial', overflow: 'visible'} : {maxHeight: maxHeight + 'px', overflow: 'hidden'}">
+  <ng-content select="[render=static]"></ng-content>
   <div class="content">
     <div class="doc">
       <div class="demo">

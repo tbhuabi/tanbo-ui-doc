@@ -9,6 +9,7 @@
 | `arrowIconClassName`  | `string`  |           | 控制下箭头的 css class |
 | `disabled`            | `boolean` | false     | 设置组件是否禁用     |
 | `readonly`            | `boolean` | false     | 设置组件是否只读     |
+| `multiple`            | `boolean` | false     | 是否开启多选功能     |
 | `selectedIndex`       | `number`  | 0         | 设置默认选中项     |
 | `size`                | `string`  |           | 组件大小，可选`lg`、`sm` |
 | `forId`               | `string`  |           | 用于 label 标签的 for 属性指定的 id，当 label 被点击时，可选中当前的组件  |
