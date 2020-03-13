@@ -32,6 +32,7 @@ import { DateDemo6Component } from './date/demo/demo6.component';
 import { FileDemo2Component } from './file/demo2.component';
 import { EditorDemo1Component } from './editor/demo1.component';
 import { PickerDemo1Component } from './picker/picker-demo1.component';
+import { SegmentExampleComponent } from './segment/segment-example.component';
 
 @NgModule({
   imports: [
@@ -53,6 +54,7 @@ import { PickerDemo1Component } from './picker/picker-demo1.component';
     RadioExampleComponent,
     CheckboxExampleComponent,
     RangeExampleComponent,
+    SegmentExampleComponent,
     DateExampleComponent,
     EditorExampleComponent,
     EditorDemo1Component,

@@ -14,6 +14,7 @@ import { FileExampleComponent } from './file/file-example.component';
 import { SelectExampleComponent } from './select/select-example.component';
 import { SwitchExampleComponent } from './switch/switch-example.component';
 import { MarkdownEditorExampleComponent } from './markdown-editor/markdown-editor-example.component';
+import { SegmentExampleComponent } from './segment/segment-example.component';
 
 export const routes: Routes = [{
   path: 'base-style',
@@ -39,6 +40,9 @@ export const routes: Routes = [{
 }, {
   path: 'range',
   component: RangeExampleComponent
+}, {
+  path: 'segment',
+  component: SegmentExampleComponent
 }, {
   path: 'file',
   component: FileExampleComponent

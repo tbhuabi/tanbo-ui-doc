@@ -14,6 +14,9 @@ export const routes: Routes = [{
     path: 'start',
     component: StartComponent
   }, {
+    path: 'drawer',
+    loadChildren: () => import('./drawer/drawer.module').then(mod => mod.DrawerModule)
+  }, {
     path: 'forms',
     loadChildren: () => import('./forms/forms.module').then(mod => mod.FormModule)
   }, {

@@ -14,6 +14,14 @@ tanbo/ui 是基于 Angular 开发的 UI 组件库，基于 tanbo/ui 可以快速
 ```bash
 npm install @tanbo/ui --save
 ```
+
+<strong class="ui-color-danger">注意：</strong>因当前版本已集成 TBus 富文本编辑器内测版，所以依赖项去掉了 quill 的依赖，如果安装时报需要 quill 或 quill-image-resize 模块，请在 package.json 的 dependencies 中添加如下依赖：
+
+```bash
+"quill": "^1.3.6",
+"quill-image-resize": "git+https://github.com/tbhuabi/quill-image-resize-module.git#338ff34c276c19deb290fbd861a1e593ed124228",
+```
+
 <h2 id="在项目中导入-tanbo/ui" uiAnchor>在项目中导入 tanbo/ui</h2>
 
 导入 tanbo/ui 的样式表
