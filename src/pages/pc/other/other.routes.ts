@@ -5,6 +5,8 @@ import { PopConfirmComponent } from './pop-confirm/pop-confirm.component';
 import { ProgressExampleComponent } from './progress/progress-example.component';
 import { TagExampleComponent } from './tag/tag-example.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { LoadingExampleComponent } from './loading/loading-example.component';
+import { AnchorExampleComponent } from './anchor/anchor-example.component';
 
 export const routes: Routes = [{
   path: 'tooltip',
@@ -21,4 +23,10 @@ export const routes: Routes = [{
 }, {
   path: 'breadcrumb',
   component: BreadcrumbComponent
+}, {
+  path: 'loading',
+  component: LoadingExampleComponent
+}, {
+  path: 'anchor',
+  component: AnchorExampleComponent
 }];

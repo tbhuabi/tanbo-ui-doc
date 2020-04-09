@@ -13,6 +13,8 @@ import { CropperExampleComponent } from './cropper/cropper-example.component';
 import { TagDemo1Component } from './tag/demo1.component';
 import { CommonModule } from '@angular/common';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { LoadingExampleComponent } from './loading/loading-example.component';
+import { AnchorExampleComponent } from './anchor/anchor-example.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     TagExampleComponent,
     TagDemo1Component,
     CropperExampleComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    LoadingExampleComponent,
+    AnchorExampleComponent
   ]
 })
 export class OtherModule {
