@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
           return '/test';
         });
       },
-      content: `<p>欢迎你使用&nbsp;<strong>TBus</strong> 富文本编辑器...<br></p>`
+      contents: `<p>欢迎你使用&nbsp;<strong>TBus</strong> 富文本编辑器...<br></p>`
     });
   }
 }
