@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { ArchitectureComponent } from './architecture/architecture.component';
+import { KeywordsComponent } from './keywords/keywords.component';
 
 export const routes: Routes = [{
   path: '',
@@ -24,5 +25,8 @@ export const routes: Routes = [{
   }, {
     path: 'architecture',
     component: ArchitectureComponent
+  }, {
+    path: 'keywords',
+    component: KeywordsComponent
   }]
 }];

@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { ArchitectureComponent } from './architecture/architecture.component';
+import { KeywordsComponent } from './keywords/keywords.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ArchitectureComponent } from './architecture/architecture.component';
     NavComponent,
     HomeComponent,
     TodoListComponent,
-    ArchitectureComponent
+    ArchitectureComponent,
+    KeywordsComponent
   ],
   providers: [{
     provide: UI_ANCHOR_LINK_DISTANCE,

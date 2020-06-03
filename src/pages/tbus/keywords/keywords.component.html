@@ -1,0 +1,26 @@
+<form class="ui-form">
+  <div class="ui-form-group">
+    <div class="ui-control-value ui-col-xs-offset-4">
+      <h2>名词解释</h2>
+    </div>
+  </div>
+  <div class="ui-form-group">
+    <label class="ui-control-label ui-control-label-compact ui-col-xs-4"><code>Template</code> <br><small>模板</small></label>
+    <div class="ui-control-static">
+      一段固定的数据结构样板，模板必须从属于一个 <code>Fragment</code>。同时，模板也可以有任意个自己的子插槽，即 <code>Slots</code>，模板根节点与 <code>Slot</code> 之间的固定结构不可编辑，但每一个 <code>Slot</code> 都是一个可编辑的区域。
+    </div>
+  </div>
+  <div class="ui-form-group">
+    <label class="ui-control-label ui-control-label-compact ui-col-xs-4"><code>Fragment</code> <br><small>可编辑域</small></label>
+    <div class="ui-control-static">
+      <code>Fragment</code> 为一段可编辑区域，并且可以插入任意的模板和字符串，并且保存了对应内容的 <code>FormatMap</code>;
+    </div>
+  </div>
+  <div class="ui-form-group">
+    <label class="ui-control-label ui-control-label-compact ui-col-xs-4"><code>Slot</code> <br><small>插槽</small></label>
+    <div class="ui-control-static">
+      插槽为一个抽象的概念，在 TBUs 中，一个插槽，意味着一段可编辑的区域，它们总是呈一对一映射关系的。<br>
+      如一个无序列表 ul，每一个子插槽都是一个 li，li 的内容可以是变化的，但 ul 的子级总是 li，这是不可变的。
+    </div>
+  </div>
+</form>

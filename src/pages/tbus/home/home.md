@@ -1,4 +1,4 @@
-<h3 uiAnchor id="安装">安装</h3>
+<h2 uiAnchor id="安装">安装</h2>
 
 通过 npm 安装 TBus：
 ```bash
@@ -19,7 +19,6 @@ import { createEditor } from '@tanbo/tbus';
 import { Observable } from 'rxjs';
 
 const editor = createEditor('#editor', {
-  usePaperModel: false, // 是否开启纸张模式编辑
   uploader(type: string): string | Promise<string> | Observable<string> {
     // switch (type) {
     //   case 'video':
@@ -39,102 +38,65 @@ const editor = createEditor('#editor', {
   content: `<p>欢迎你使用&nbsp;<strong>TBus</strong> 富文本编辑器...<br></p>`
 });
 
-editor.onChange.subscribe(result => {
-  console.log(result);
+editor.onChange.subscribe(() => {
+  console.log(editor.getContents());
 });
 ```
 <h3 uiAnchor id="功能定制">功能定制</h3>
 
-一般情况下，直接通过 `createEditor` 函数初始化 TBus 即可，要定制工具条，你需要手动实例化 TBus。如果你不清楚 TBus 提供了哪些工具，你只需要到 `@tanbo/tbus/bundles/lib/toolbar/formats` 下查看即可；
+一般情况下，直接通过 `createEditor` 函数初始化 TBus 即可，要定制工具条，你需要手动实例化 TBus。如果你不清楚 TBus 提供了哪些工具，你只需要到 `/node_modules/@tanbo/tbus/bundles/lib/toolbar/tools` 下查看即可；
 ```typescript
 import {
-    TBus,
-    alignHandler,
-    blockBackgroundHandler,
-    blockquoteHandler,
-    boldHandler,
-    cleanHandler,
-    codeHandler,
-    colorHandler,
-    emojiHandler,
-    fontFamilyHandler,
-    fontSizeHandler,
-    hHandler,
-    historyBackHandler,
-    historyForwardHandler,
-    imageHandler,
-    indentHandler,
-    italicHandler,
-    letterSpacingHandler,
-    lineHeightHandler,
-    linkHandler,
-    musicHandler,
-    olHandler,
-    strikeThroughHandler,
-    subscriptHandler,
-    superscriptHandler,
-    tableHandler,
-    tableEditHandler,
-    textBackgroundHandler,
-    ulHandler,
-    underlineHandler,
-    videoHandler
+  TBus,
+  audioTool,
+  blockBackgroundTool,
+  boldTool,
+  cleanTool,
+  codeTool,
+  colorTool,
+  emojiTool,
+  fontFamilyTool,
+  fontSizeTool,
+  headingTool,
+  historyBackTool,
+  historyForwardTool,
+  imageTool,
+  italicTool,
+  letterSpacingTool,
+  lineHeightTool,
+  linkTool,
+  olTool,
+  strikeThroughTool,
+  subscriptTool,
+  superscriptTool,
+  tableEditTool,
+  tableTool,
+  textAlignTool,
+  textBackgroundTool,
+  textIndentTool,
+  ulTool,
+  underlineTool,
+  videoTool
 } from '@tanbo/tbus';
 
 const editor = new TBus(document.getElementById('editor'), {
-  uploader(type: string) {
-    return Promise.resolve().then(() => '/test');
-  },
-  handlers: [
-    [
-      historyBackHandler,
-      historyForwardHandler
-    ],
-    [
-      hHandler
-    ], [
-      boldHandler,
-      italicHandler,
-      strikeThroughHandler,
-      underlineHandler,
-    ], [
-      blockquoteHandler
-    ], [
-      codeHandler
-    ], [
-      olHandler,
-      ulHandler
-    ], [
-      fontSizeHandler,
-      lineHeightHandler,
-      letterSpacingHandler,
-      indentHandler
-    ], [
-      superscriptHandler,
-      subscriptHandler
-    ], [
-      colorHandler,
-      textBackgroundHandler,
-      blockBackgroundHandler,
-      emojiHandler,
-    ], [
-      fontFamilyHandler
-    ], [
-      linkHandler,
-      imageHandler,
-      musicHandler,
-      videoHandler
-    ], [
-      alignHandler
-    ], [
-      tableHandler,
-      tableEditHandler
-    ], [
-      cleanHandler
-    ]
+  toolbar: [
+    [historyBackTool, historyForwardTool],
+    [headingTool],
+    [boldTool, italicTool, strikeThroughTool, underlineTool],
+    [codeTool],
+    [olTool, ulTool],
+    [fontSizeTool, lineHeightTool, letterSpacingTool, textIndentTool],
+    [subscriptTool, superscriptTool],
+    [colorTool, textBackgroundTool, blockBackgroundTool, emojiTool],
+    [fontFamilyTool],
+    [linkTool, imageTool, audioTool, videoTool],
+    [textAlignTool],
+    [tableTool, tableEditTool],
+    [cleanTool]
   ]
 });
-editor.onChange.subscribe(result => {
-  console.log(result);
+editor.onChange.subscribe(() => {
+  console.log(editor.getContents());
 });
 ```

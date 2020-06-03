@@ -1,15 +1,7 @@
 <div class="doc">
-  <h3 uiAnchor id="简介">简介</h3>
-  <p>TBus 是一个所见即所得的富文本编辑器，致力于创造简单、美观、易扩展的新型 web 文本编辑工具。</p>
-  <p>和一般传统的富文本编辑器不同，TBus 不依赖于 DOM 的 contentEditable 属性，通过自实现抽象数据结构、光标、输入功能，较为完美的绕开了传统富文本很难解决的，如：光标位置、脏标签、相邻同样的标签不能自动合并、编辑数据污染输出结果等一系列问题。同时，因为脱离了传统的编辑模式，TBus 有着简洁的输入出结果。在对同样一段文本做数次格式化操作后，TBus 依然能不受影响的输出最简短的结果（<strong class="ui-color-primary">基本少一半的长度</strong>），而其它的编辑器，虽然有各种各样的优化，但因为设计上的问题，输入结果却不尽人意。所以，现在赶快试试吧！</p>
-  <div #editor></div>
   <link rel="markdown" href="./home.md">
   <h3 uiAnchor id="TBus-的亮点">TBus 的亮点</h3>
   <h5 uiAnchor id="简洁的输出结果">简洁的输出结果</h5>
-<!--  <div class="ui-alert ui-alert-dark ui-alert-fill">-->
-<!--    <strong class="ui-color-danger">商业价值：</strong>-->
-<!--    <strong>更快的下载速度，更小的储存空间，更少的带宽</strong>-->
-<!--  </div>-->
   <p>得益于先进的设计，TBus 有着对内容非同一般的优化能力。我们对目前相对比较流行的富文本编辑器做了相同测试（时间：2019-12-27）：<br>
     <a href="http://www.wangeditor.com/" target="_blank">wangEditor</a>、
     <a href="https://www.tiny.cloud/docs/demo/full-featured/" target="_blank">TinyMCE</a>、
@@ -275,7 +267,6 @@
   <p>传统的富文本编辑器，标题要么用 css 重置为不加粗，然后再加应用加粗样式； 要么干脆不管，让标题上加粗没有效果。不得不说，用传统的方法是比较难做到的，但这对 <strong>TBus</strong> 来说，当然不是问题。<strong>TBus</strong> 支持 h1 ~ h6、th 标签下的加粗和取消加粗功能。</p>
 </div>
 <div class="doc-quick-links">
-  <a uiAnchorLink routerLink="./" fragment="简介">简介</a>
   <a uiAnchorLink routerLink="./" fragment="安装">安装</a>
   <a uiAnchorLink routerLink="./" fragment="功能定制">功能定制</a>
   <a uiAnchorLink routerLink="./" fragment="TBus-的亮点">TBus 的亮点</a>
