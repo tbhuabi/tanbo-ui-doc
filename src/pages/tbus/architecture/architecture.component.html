@@ -7,119 +7,19 @@
       <img src="../../../assets/images/editor/幻灯片2.png" alt="架构设计图">
     </p>
   </div>
-  <h2 uiAnchor id="关键名词释义">关键名词释义</h2>
-  <div class="nouns">
-    <h4 uiAnchor id="工具条">工具条</h4>
-    <table class="ui-table ui-table-bordered">
-      <thead>
-      <tr>
-        <th style="width: 140px">名词</th>
-        <th style="width: 160px">中文名</th>
-        <th>解释</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><code>Handler</code></td>
-        <td>富文本操作工具</td>
-        <td>一个包含了生命周期（Hooks）、命令（Commander）、匹配器（Matcher）、缓存（CacheData）及工具条 UI 的集合类</td>
-      </tr>
-      <tr>
-        <td><code>Hooks</code></td>
-        <td>生命周期</td>
-        <td>定制编辑器各个生命周期的行为</td>
-      </tr>
-      <tr>
-        <td><code>Commander</code></td>
-        <td>命令</td>
-        <td>实现富文本格式化的命令工具</td>
-      </tr>
-      <tr>
-        <td><code>Matcher</code></td>
-        <td>匹配器</td>
-        <td>富文本状态匹配器，用于查询所有 Handler 在选区（Selection）中的状态，用于查询一个 DOM 节点或抽象数据（CacheData）与所有 Handler 的匹配结果</td>
-      </tr>
-      <tr>
-        <td><code>Forms</code></td>
-        <td>表单</td>
-        <td>定制表单工具条的类</td>
-      </tr>
-      </tbody>
-    </table>
-    <h4 uiAnchor id="渲染器">渲染器</h4>
-    <table class="ui-table ui-table-bordered">
-      <thead>
-      <tr>
-        <th style="width: 140px">名词</th>
-        <th style="width: 160px">中文名</th>
-        <th>解释</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><code>Differ</code></td>
-        <td>差异算法</td>
-        <td>用于比较上一次虚拟 DOM 和当前虚拟 DOM 的差异</td>
-      </tr>
-      <tr>
-        <td><code>Renderer</code></td>
-        <td>渲染器</td>
-        <td>适用于当前平台的 UI 渲染器</td>
-      </tr>
-      <tr>
-        <td><code>Selection</code></td>
-        <td>选区</td>
-        <td>用户在富文本选中的区域</td>
-      </tr>
-      <tr>
-        <td><code>Events</code></td>
-        <td>事件</td>
-        <td>用户在富文本操作时发生的有效动作</td>
-      </tr>
-      </tbody>
-    </table>
-    <h4 uiAnchor id="数据">数据</h4>
-    <table class="ui-table ui-table-bordered">
-      <thead>
-      <tr>
-        <th style="width: 140px">名词</th>
-        <th style="width: 160px">中文名</th>
-        <th>解释</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><code>Fragment</code></td>
-        <td>片段</td>
-        <td>一段结构化的数据，包含内容（Contents）和格式化数据（FormatMap）</td>
-      </tr>
-      <tr>
-        <td><code>Single</code></td>
-        <td>单节点</td>
-        <td>单节点，如图片、音频、视频等，也包含自身的格式化数据</td>
-      </tr>
-      <tr>
-        <td><code>Contents</code></td>
-        <td>内容</td>
-        <td>一段结构化的数据，包含：文本、单节点（Single）、子片段、格式化数据（FormatMap）</td>
-      </tr>
-      <tr>
-        <td><code>FormatMap</code></td>
-        <td>格式矩阵</td>
-        <td>格式化数据，用于储存一个版本或单节点的格式化信息</td>
-      </tr>
-      <tr>
-        <td><code>Virtual DOM</code></td>
-        <td>虚拟 DOM</td>
-        <td>抽象数据生成的一个类 DOM 结构的树</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+  <h2>定制与扩展</h2>
+  <p>TBus 设计之初就充分考虑了可定制性与扩展性，为了践行这一设计，TBus 核心模块只有组织与调度的能力，其它所有的功能都是只是遵循扩展接口的外部函数或类，也就是说，没有这些外部函数或类，TBus 核心模块就只剩空架子，完成不了任何事情。</p>
+  <p>在默认情况下，一般会调用 createEditor 函数来创建一个 TBus 实例。当我们查看 createEditor 函数的内容时会发现，该函数只是把一系列的接口实例等配置在可选项里而已。</p>
+  <link rel="markdown" href="./default-option.md">
   <h2 uiAnchor id="交互流程">交互流程</h2>
+  <p>TBus 并未采用 DOM 的 contentEditable 属性来实现编辑功能，所以 TBus 并不能直接编辑 HTML 内容，而是通过间接的方式，通过编辑抽象数据，并通过 Renderer 类渲染到 DOM 中。当初始化 TBus，或给 TBus 传入一段 HTML 文本时，TBus 会首先通过 Parser，把 HTML 转换为 TBus 定义的数据，然后再进行后续的操作。</p>
+  <p class="ui-text-center">
+    <img src="../../../assets/images/editor/幻灯片4.png" alt="交互流程图">
+  </p>
+  <h2 uiAnchor id="数据结构">数据结构</h2>
   <div>
     <p class="ui-text-center">
-      <img src="../../../assets/images/editor/幻灯片3.png" alt="交互流程图">
+      <img src="../../../assets/images/editor/幻灯片3.png" alt="数据结构">
     </p>
   </div>
 </div>
