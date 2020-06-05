@@ -8,15 +8,16 @@
     </p>
   </div>
   <h2>定制与扩展</h2>
-  <p>TBus 设计之初就充分考虑了可定制性与扩展性，为了践行这一设计，TBus 核心模块只有组织与调度的能力，其它所有的功能都是只是遵循扩展接口的外部函数或类，也就是说，没有这些外部函数或类，TBus 核心模块就只剩空架子，完成不了任何事情。</p>
-  <p>在默认情况下，一般会调用 createEditor 函数来创建一个 TBus 实例。当我们查看 createEditor 函数的内容时会发现，该函数只是把一系列的接口实例等配置在可选项里而已。</p>
+  <p>TBus 设计之初就充分考虑了可定制性与扩展性，为了践行这一设计，TBus 核心模块只有组织与调度的能力，其它所有的功能都是只是遵循扩展接口的外部函数或类，也就是说，没有这些外部函数或类，TBus 核心模块就只剩一个空的骨架，完成不了任何事情。</p>
+  <p>在默认情况下，一般会调用 <code>createEditor</code> 函数来创建一个 TBus 实例。当我们查看 <code>createEditor</code> 函数的内容时会发现，该函数只是把一系列的接口实例等配置在可选项里而已。</p>
   <link rel="markdown" href="./default-option.md">
   <h2 uiAnchor id="交互流程">交互流程</h2>
-  <p>TBus 并未采用 DOM 的 contentEditable 属性来实现编辑功能，所以 TBus 并不能直接编辑 HTML 内容，而是通过间接的方式，通过编辑抽象数据，并通过 Renderer 类渲染到 DOM 中。当初始化 TBus，或给 TBus 传入一段 HTML 文本时，TBus 会首先通过 Parser，把 HTML 转换为 TBus 定义的数据，然后再进行后续的操作。</p>
+  <p>TBus 并未采用 DOM 的 contentEditable 属性来实现编辑功能，所以 TBus 并不能直接编辑 HTML 内容，而是通过编辑抽象数据，并通过 <code>Renderer</code> 类渲染到 DOM 中。当初始化 TBus，或给 TBus 传入一段 HTML 文本时，TBus 会首先通过 <code>Parser</code>，把 HTML 转换为 TBus 定义的数据，然后再进行后续的操作。</p>
   <p class="ui-text-center">
     <img src="../../../assets/images/editor/幻灯片4.png" alt="交互流程图">
   </p>
   <h2 uiAnchor id="数据结构">数据结构</h2>
+  <p>TBus 的数据类型只有两种，一种是 <code>Template</code>，一种是 <code>string</code>。数据结构也只有两种，一个是 <code>Template</code>，一个是 <code>Fragment</code>。格式信息被当作额外数据，<code>Template</code> 中固定的格式由 <code>Template</code> 自行保存与渲染，<code>Fragment</code> 中的格式则由 TBus 抽象成 <code>FormatMap</code>，保存在对应的 <code>Fragment</code> 中，它们的结构如下：</p>
   <div>
     <p class="ui-text-center">
       <img src="../../../assets/images/editor/幻灯片3.png" alt="数据结构">
@@ -25,9 +26,6 @@
 </div>
 <div class="doc-quick-links">
   <a uiAnchorLink routerLink="./" fragment="架构设计">架构设计</a>
-  <a uiAnchorLink routerLink="./" fragment="关键名词释义">关键名词释义</a>
-  <a uiAnchorLink class="h4" routerLink="./" fragment="工具条">工具条</a>
-  <a uiAnchorLink class="h4" routerLink="./" fragment="渲染器">渲染器</a>
-  <a uiAnchorLink class="h4" routerLink="./" fragment="数据">数据</a>
+  <a uiAnchorLink routerLink="./" fragment="定制与扩展">定制与扩展</a>
   <a uiAnchorLink routerLink="./" fragment="交互流程">交互流程</a>
 </div>
