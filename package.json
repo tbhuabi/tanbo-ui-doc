@@ -29,7 +29,7 @@
     "@angular/platform-browser": "^8.0.0",
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
-    "@tanbo/tbus": "0.0.2-alpha.7",
+    "@tanbo/tbus": "0.0.2-alpha.8",
     "@tanbo/ui": "1.0.0-alpha.85",
     "@types/three": "0.93.22",
     "core-js": "^3.0.1",
