@@ -9,6 +9,7 @@ import { AppService } from '../../app/app.service';
   styleUrls: ['./tbus.component.scss']
 })
 export class TBusComponent implements OnInit, OnDestroy {
+  version = process.env.EDITOR_VERSION as string;
   @ViewChild('editor', {static: true})
   editor: ElementRef;
 
