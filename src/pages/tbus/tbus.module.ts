@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { ArchitectureComponent } from './architecture/architecture.component';
 import { KeywordsComponent } from './keywords/keywords.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { KeywordsComponent } from './keywords/keywords.component';
     HomeComponent,
     TodoListComponent,
     ArchitectureComponent,
-    KeywordsComponent
+    KeywordsComponent,
+    UploadComponent
   ],
   providers: [{
     provide: UI_ANCHOR_LINK_DISTANCE,

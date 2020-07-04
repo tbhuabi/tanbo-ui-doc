@@ -5,6 +5,7 @@ import { NavComponent } from './nav/nav.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { ArchitectureComponent } from './architecture/architecture.component';
 import { KeywordsComponent } from './keywords/keywords.component';
+import { UploadComponent } from './upload/upload.component';
 
 export const routes: Routes = [{
   path: '',
@@ -28,5 +29,8 @@ export const routes: Routes = [{
   }, {
     path: 'keywords',
     component: KeywordsComponent
+  }, {
+    path: 'upload',
+    component: UploadComponent
   }]
 }];
