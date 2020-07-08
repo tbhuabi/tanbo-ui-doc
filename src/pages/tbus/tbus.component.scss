@@ -34,6 +34,7 @@
     text-align: center;
     color: #fff;
     font-size: 18px;
+
     strong {
       font-size: 1.8em;
     }
@@ -68,6 +69,22 @@ h1 {
     margin-left: 30px;
     color: #fff;
     text-decoration: none;
+    position: relative;
+    z-index: 100;
+
+    &:hover img {
+      display: block;
+    }
+
+    img {
+      position: absolute;
+      top: 30px;
+      width: 252px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      display: none;
+    }
   }
 }
 
