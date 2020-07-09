@@ -18,7 +18,10 @@ npm install @tanbo/tbus
 import { createEditor } from '@tanbo/tbus';
 import { Observable } from 'rxjs';
 
+import '@tanbo/tbus/bundles/editor.min.css';
+
 const editor = createEditor('#editor', {
+  // theme: // 可选 'dark' | 'mac-os' | 'mac-os-dark'，不传即为默认样式
   uploader(type: string): string | Promise<string> | Observable<string> {
     // switch (type) {
     //   case 'video':
@@ -35,7 +38,7 @@ const editor = createEditor('#editor', {
       return '/test'
     })
   },
-  content: `<p>欢迎你使用&nbsp;<strong>TBus</strong> 富文本编辑器...<br></p>`
+  contents: `<p>欢迎你使用&nbsp;<strong>TBus</strong> 富文本编辑器...<br></p>`
 });
 
 editor.onChange.subscribe(() => {

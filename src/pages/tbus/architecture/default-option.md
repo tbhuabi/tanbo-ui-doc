@@ -5,6 +5,8 @@
 export interface EditorOptions {
   /** 设置主题 */
   theme?: string;
+  /** 设备宽度 */
+  deviceWidth?: string;
   /** 设置最大历史栈 */
   historyStackSize?: number;
   /** 设置模板转换器 */
@@ -17,9 +19,11 @@ export interface EditorOptions {
   hooks?: Lifecycle[];
   /** 配置编辑器的默认样式 */
   styleSheets?: string[];
-  /** 当某些工具需要上传资源时的调用函数，调用时会传入上传资源的类型，如 image、video、audio等，该函数返回一个字符串，作为资源的 url 地址 */
-  uploader?(type: string): (string | Promise<string> | Observable<string>);
   /** 设置初始化 TBus 时的默认内容 */
   contents?: string;
+  /** 设置可选的自定义模板 */
+  templateExamples?: TemplateExample[];
+  /** 当某些工具需要上传资源时的调用函数，调用时会传入上传资源的类型，如 image、video、audio等，该函数返回一个字符串，作为资源的 url 地址 */
+  uploader?(type: string): (string | Promise<string> | Observable<string>);
 }
 ```
