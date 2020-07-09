@@ -12,7 +12,7 @@ export interface EditorOptions {
   /** 设置模板转换器 */
   templateTranslators?: TemplateTranslator[];
   /** 设置格式转换器 */
-  formatters?: InlineFormatter[];
+  formatters?: Formatter[];
   /** 工具条配置 */
   toolbar?: (ToolFactory | ToolFactory[])[];
   /** 配置生命周期勾子 */
