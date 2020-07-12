@@ -8,15 +8,15 @@
     </div>
   </div>
   <div class="ui-form-group">
-    <label class="ui-control-label ui-control-label-compact"><code>Template</code> <br><small>模板</small></label>
+    <label class="ui-control-label ui-control-label-compact"><code>Component</code> <br><small>组件</small></label>
     <div class="ui-control-static">
-      一段固定的数据结构样板，并且自已保存需要的数据，并实现根据自身的数据渲染对应虚拟 DOM 树。<br>模板必须从属于一个 <code>Fragment</code>。同时，模板也可以有任意个自己的子插槽，即 <code>Slot</code>，模板根节点与 <code>Slot</code> 之间的固定结构不可编辑，但每一个 <code>Slot</code> 都是一个可编辑的区域。
+      一段固定的数据结构样板，并且自已保存需要的数据，并实现根据自身的数据渲染对应虚拟 DOM 树。<br>组件必须从属于一个 <code>Fragment</code>。同时，组件也可以有任意个自己的子插槽，即 <code>Slot</code>，组件根节点与 <code>Slot</code> 之间的固定结构不可编辑，但每一个 <code>Slot</code> 都是一个可编辑的区域。
     </div>
   </div>
   <div class="ui-form-group">
     <label class="ui-control-label ui-control-label-compact"><code>Fragment</code> <br><small>可编辑域</small></label>
     <div class="ui-control-static">
-      <code>Fragment</code> 为一段可编辑区域，可以插入任意的模板和字符串。同时，<code>Fragment</code> 还保存了对应内容的 <code>FormatMap</code>。
+      <code>Fragment</code> 为一段可编辑区域，可以插入任意的组件和字符串。同时，<code>Fragment</code> 还保存了对应内容的 <code>FormatMap</code>。
     </div>
   </div>
   <div class="ui-form-group">
@@ -27,9 +27,9 @@
     </div>
   </div>
   <div class="ui-form-group">
-    <label class="ui-control-label ui-control-label-compact"><code>TemplateTranslator</code> <br><small>模板转换器</small></label>
+    <label class="ui-control-label ui-control-label-compact"><code>ComponentReader</code> <br><small>组件转换器</small></label>
     <div class="ui-control-static">
-      模板转换器负责把一段匹配到的 HTML 元素，转换为对应的 <code>Template</code> 实例。当我们要扩展 TBus 的结构样板时，可以自定义一个转换器，并添加在 TBus 配置项的 templateTranslators 中。<br> TBus 所有的核心模板也都是以同样方式实现的。
+      组件转换器负责把一段匹配到的 HTML 元素，转换为对应的 <code>Component</code> 实例。当我们要扩展 TBus 的结构样板时，可以自定义一个转换器，并添加在 TBus 配置项的 componentReaders 中。<br> TBus 所有的核心组件也都是以同样方式实现的。
     </div>
   </div>
   <div class="ui-form-group">
@@ -113,7 +113,7 @@
   </div>
   <div class="ui-form-group">
     <label class="ui-control-label ui-control-label-compact"><code>Renderer</code> <br><small>渲染器</small></label>
-    <div class="ui-control-static">用于渲染一段抽象数据（<code>Fragment</code>）。将 <code>Fragment</code> 生成虚拟 DOM，并对新旧两次的虚拟 DOM 树作 diff 运算，求出最小更新范围，并更新真实 DOM。<br> <code>Renderer</code> 对象还提供了一系列的查询方法，这些方法可以方便的获取 <code>Fragment</code>、<code>VDom</code>、<code>Template</code> 与真实 DOM 节点之前的关系。</div>
+    <div class="ui-control-static">用于渲染一段抽象数据（<code>Fragment</code>）。将 <code>Fragment</code> 生成虚拟 DOM，并对新旧两次的虚拟 DOM 树作 diff 运算，求出最小更新范围，并更新真实 DOM。<br> <code>Renderer</code> 对象还提供了一系列的查询方法，这些方法可以方便的获取 <code>Fragment</code>、<code>VDom</code>、<code>Component</code> 与真实 DOM 节点之前的关系。</div>
   </div>
 </div>
 
