@@ -2,10 +2,14 @@ import { Routes } from '@angular/router';
 import { TBusComponent } from './tbus.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
 import { ArchitectureComponent } from './architecture/architecture.component';
 import { KeywordsComponent } from './keywords/keywords.component';
 import { UploadComponent } from './upload/upload.component';
+import { SponsorshipComponent } from './sponsorship/sponsorship.component';
+import { ExtendFormatterComponent } from './extend-formatter/extend-formatter.component';
+import { ExtendComponentComponent } from './extend-component/extend-component.component';
+import { QuestionComponent } from './question/question.component';
+import { AboutComponent } from './about/about.component';
 
 export const routes: Routes = [{
   path: '',
@@ -21,9 +25,6 @@ export const routes: Routes = [{
     path: '',
     component: HomeComponent
   }, {
-    path: 'todo-list',
-    component: TodoListComponent
-  }, {
     path: 'architecture',
     component: ArchitectureComponent
   }, {
@@ -32,5 +33,20 @@ export const routes: Routes = [{
   }, {
     path: 'upload',
     component: UploadComponent
+  }, {
+    path: 'sponsorship',
+    component: SponsorshipComponent
+  }, {
+    path: 'extend-formatter',
+    component: ExtendFormatterComponent
+  }, {
+    path: 'extend-component',
+    component: ExtendComponentComponent
+  }, {
+    path: 'question',
+    component: QuestionComponent
+  }, {
+    path: 'about',
+    component: AboutComponent
   }]
 }];

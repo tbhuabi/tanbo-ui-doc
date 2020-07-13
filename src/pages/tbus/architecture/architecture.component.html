@@ -7,7 +7,7 @@
       <img src="../../../assets/images/editor/幻灯片2.png" alt="架构设计图">
     </p>
   </div>
-  <h2>定制与扩展</h2>
+  <h2 uiAnchor id="定制与扩展">定制与扩展</h2>
   <p>TBus 设计之初就充分考虑了可定制性与扩展性，为了践行这一设计，TBus 核心模块只有组织与调度的能力，其它所有的功能都是只是遵循扩展接口的外部函数或类，也就是说，没有这些外部函数或类，TBus 核心模块就只剩一个空的骨架，完成不了任何事情。</p>
   <p>在默认情况下，一般会调用 <code>createEditor</code> 函数来创建一个 TBus 实例。当我们查看 <code>createEditor</code> 函数的内容时会发现，该函数只是把一系列的接口实例等配置在可选项里而已。</p>
   <link rel="markdown" href="./default-option.md">
@@ -28,4 +28,5 @@
   <a uiAnchorLink routerLink="./" fragment="架构设计">架构设计</a>
   <a uiAnchorLink routerLink="./" fragment="定制与扩展">定制与扩展</a>
   <a uiAnchorLink routerLink="./" fragment="交互流程">交互流程</a>
+  <a uiAnchorLink routerLink="./" fragment="数据结构">数据结构</a>
 </div>
