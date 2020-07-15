@@ -37,7 +37,7 @@
 
 | 事件名         | 事件触发时机 | 参数类型              | 参数说明    |
 | --             | --          | --                   | --          |
-| `uiClean`  | 当用户点击清除按扭时触发 |`void`   |  |
+| `uiClean`  | 当用户点击清除按钮时触发 |`void`   |  |
 
 <h2 uiAnchor id="ui-dropdown-menu">ui-dropdown-menu</h2>
 <h4 uiAnchor id="ui-dropdown-menu-输入属性">输入属性</h4>

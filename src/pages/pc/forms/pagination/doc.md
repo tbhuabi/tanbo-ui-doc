@@ -6,8 +6,8 @@
 | `pages`       | `number`  | 1         | 总共有多少页（与 rows、pageSize 参数冲突） |
 | `rows`        | `number`  | 1         | 总条数（与 pages 参数冲突） |
 | `pageSize`    | `number`  | 10        | 每页多少条（与 pages 参数冲突） |
-| `btnCount`    | `number`  | 8         | 按扭个数 |
-| `size`        | `string`  |           | 组件按扭大小，可选`lg`、`sm` |
+| `btnCount`    | `number`  | 8         | 按钮个数 |
+| `size`        | `string`  |           | 组件按钮大小，可选`lg`、`sm` |
 
 <h2 uiAnchor id="输出事件">输出事件</h2>
 

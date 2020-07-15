@@ -17,9 +17,9 @@ export class DialogComponent {
     };
     this.dialogController.dialog(config).then(b => {
       if (b) {
-        console.log('你点击了确认按扭');
+        console.log('你点击了确认按钮');
       } else {
-        console.log('你点击了取消按扭');
+        console.log('你点击了取消按钮');
       }
     });
   }
