@@ -4,5 +4,5 @@ import { Component } from '@angular/core';
   templateUrl: './segment-example.component.html'
 })
 export class SegmentExampleComponent {
-  type = '年'
+  type = '年';
 }

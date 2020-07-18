@@ -1,4 +1,4 @@
-<h2>名词解释</h2>
+<h1 uiAnchor id="名词解释">名词解释</h1>
 <p>为了在使用中更好的利用 TBus 提供的一系列能力，准确的理解 TBus 中和各种概念是非常必要的。下面我们分别对基础数据、交互能力、选区、渲染及其它相关的名词术语作一一解释。</p>
 <div>
   <div class="ui-form-group">
@@ -27,9 +27,9 @@
     </div>
   </div>
   <div class="ui-form-group">
-    <label class="ui-control-label ui-control-label-compact"><code>ComponentReader</code> <br><small>组件转换器</small></label>
+    <label class="ui-control-label ui-control-label-compact"><code>ComponentReader</code> <br><small>组件解析器</small></label>
     <div class="ui-control-static">
-      组件转换器负责把一段匹配到的 HTML 元素，转换为对应的 <code>Component</code> 实例。当我们要扩展 TBus 的结构样板时，可以自定义一个转换器，并添加在 TBus 配置项的 componentReaders 中。<br> TBus 所有的核心组件也都是以同样方式实现的。
+      组件解析器负责把一段匹配到的 HTML 元素，转换为对应的 <code>Component</code> 实例。当我们要扩展 TBus 的结构样板时，可以自定义一个组件解析器，并添加在 TBus 配置项的 componentReaders 中。<br> TBus 所有的核心组件也都是以同样方式实现的。
     </div>
   </div>
   <div class="ui-form-group">

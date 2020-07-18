@@ -1,4 +1,4 @@
-<h2 uiAnchor id="安装">安装</h2>
+<h1 uiAnchor id="安装">安装</h1>
 
 通过 npm 安装 TBus：
 ```bash

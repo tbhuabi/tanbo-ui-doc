@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./keywords.component.scss']
 })
 export class KeywordsComponent {
-  
 }

@@ -13,7 +13,7 @@ import { Demo1Service } from './demo1.service';
 })
 export class EditorDemo1Component {
   uploader = (type: string) => {
-    console.log(type)
+    console.log(type);
     if (type === 'image') {
       const fileInput = document.createElement('input');
       fileInput.setAttribute('type', 'file');
@@ -33,7 +33,7 @@ export class EditorDemo1Component {
       fileInput.click();
       return obs;
     }
-  };
+  }
 
   constructor(private demo1Service: Demo1Service) {
   }

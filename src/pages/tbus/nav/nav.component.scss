@@ -105,6 +105,10 @@ ui-scroll {
 
 .content {
   padding: 20px 230px 200px 30px;
+  ::ng-deep h1 {
+    border-bottom: 1px solid $color-primary;
+    padding-bottom: 10px;
+  }
 
   ::ng-deep > ui-panel {
     box-shadow: none;

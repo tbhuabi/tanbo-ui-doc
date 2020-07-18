@@ -4,5 +4,4 @@ import { Component } from '@angular/core';
   templateUrl: './loading-example.component.html'
 })
 export class LoadingExampleComponent {
-  
 }

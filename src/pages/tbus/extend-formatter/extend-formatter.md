@@ -120,12 +120,14 @@ class ColorCommander implements Commander<string> {
    */
   command(selection: TBSelection) {
     selection.ranges.forEach(range => {
+      // 获取选区内所有已选择的范围
       range.getSelectedScope().forEach(item => {
-        item.fragment.apply({
+        // 给每一段选中的内容应用样式
+        item.fragment.apply(colorFormatter, {
+         // 如果当前有颜色，则让颜色生效，否则不生效
           state: this.color ? FormatEffect.Valid : FormatEffect.Invalid,
           startIndex: item.startIndex,
           endIndex: item.endIndex,
-          renderer: colorFormatter,
           abstractData: new FormatAbstractData({
             style: {
               name: 'color',
@@ -145,7 +147,8 @@ class ColorCommander implements Commander<string> {
 
 ```typescript
 // # color.tool.ts
-import { Toolkit, FormatAbstractData } from '@tanbo/tbus';
+import { Toolkit, FormatAbstractData, FormatMatcher } from '@tanbo/tbus';
+import { colorFormatter } from './color.formatter';
 
 import { ColorCommander } from './color.commander';
 
@@ -164,6 +167,7 @@ export const colorTool = Toolkit.makeSelectTool({
     value: '#000',
     default: true
   }],
+  matcher: new FormatMatcher(colorFormatter),
   highlight(options, data) {
     if (data instanceof FormatAbstractData) {
       for (const option of options) {

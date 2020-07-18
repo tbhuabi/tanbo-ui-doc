@@ -4,5 +4,4 @@ import { Component } from '@angular/core';
   templateUrl: './anchor-example.component.html'
 })
 export class AnchorExampleComponent {
-  
 }

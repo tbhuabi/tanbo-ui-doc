@@ -1,0 +1,15 @@
+@import "../keywords/keywords.component";
+
+table {
+  tr:nth-child(2n-1) {
+    color: $color-primary;
+  }
+  td p:first-child {
+    margin-top: 0;
+  }
+  td:first-child {
+    padding-right: 10px;
+    font-weight: bold;
+    vertical-align: top;
+  }
+}
