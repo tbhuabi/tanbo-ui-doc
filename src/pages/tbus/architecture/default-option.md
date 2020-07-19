@@ -7,6 +7,8 @@ export interface EditorOptions {
   theme?: string;
   /** 设备宽度 */
   deviceWidth?: string;
+  /** 默认是否展开组件库 */
+  expandComponentLibrary?: boolean;
   /** 设置最大历史栈 */
   historyStackSize?: number;
   /** 设置组件读取转换器 */
@@ -22,7 +24,7 @@ export interface EditorOptions {
   /** 设置初始化 TBus 时的默认内容 */
   contents?: string;
   /** 设置可选的自定义组件 */
-  componentExamples?: ComponentExample[];
+  componentLibrary?: ComponentExample[];
 
   /** 当某些工具需要上传资源时的调用函数，调用时会传入上传资源的类型，如 image、video、audio等，该函数返回一个字符串，作为资源的 url 地址 */
   uploader?(type: string): (string | Promise<string> | Observable<string>);
