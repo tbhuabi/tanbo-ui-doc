@@ -30,7 +30,7 @@
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
     "@tanbo/bezier": "0.0.1",
-    "@tanbo/tbus": "0.0.2-beta.52",
+    "@tanbo/tbus": "0.0.2-beta.53",
     "@tanbo/ui": "1.0.0-alpha.91",
     "@types/three": "0.93.22",
     "core-js": "^3.0.1",

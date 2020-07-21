@@ -19,8 +19,10 @@ export interface EditorOptions {
   toolbar?: (ToolFactory | ToolFactory[])[];
   /** 配置生命周期勾子 */
   hooks?: Lifecycle[];
-  /** 配置编辑器的默认样式 */
+  /** 配置文档的默认样式 */
   styleSheets?: string[];
+  /** 配置文档编辑状态下用到的样式 */
+  editingStyleSheets?: string[];
   /** 设置初始化 TBus 时的默认内容 */
   contents?: string;
   /** 设置可选的自定义组件 */
