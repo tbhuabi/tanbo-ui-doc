@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { CubicBezier, BezierPoint } from 'tanbo-bezier';
+import { CubicBezier, BezierPoint } from '@tanbo/bezier';
 
 @Component({
   selector: 'x-cubic-bezier',

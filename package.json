@@ -29,6 +29,7 @@
     "@angular/platform-browser": "^8.0.0",
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
+    "@tanbo/bezier": "0.0.1",
     "@tanbo/tbus": "0.0.2-beta.52",
     "@tanbo/ui": "1.0.0-alpha.91",
     "@types/three": "0.93.22",
@@ -37,7 +38,6 @@
     "marked": "^0.6.3",
     "normalize.css": "8.0.1",
     "rxjs": "^6.5.1",
-    "tanbo-bezier": "^1.0.0-alpha.0",
     "three": "0.98.0",
     "zone.js": "~0.9.1"
   },

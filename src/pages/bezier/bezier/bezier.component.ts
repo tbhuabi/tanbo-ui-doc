@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NotifyType, NotifyController } from '@tanbo/ui';
-import { BezierPoint, Bezier } from 'tanbo-bezier';
+import { BezierPoint, Bezier } from '@tanbo/bezier';
 
 @Component({
   selector: 'x-bezier',
