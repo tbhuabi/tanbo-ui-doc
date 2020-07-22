@@ -80,6 +80,7 @@ import {
   textIndentTool,
   ulTool,
   underlineTool,
+  unlinkTool,  
   videoTool, 
   codeTool, 
   leftToRightTool, 
@@ -99,7 +100,8 @@ const editor = new TBus(document.getElementById('editor'), {
     [leftToRightTool, rightToLeftTool],
     [colorTool, textBackgroundTool, blockBackgroundTool, emojiTool],
     [fontFamilyTool],
-    [linkTool, imageTool, audioTool, videoTool],
+    [linkTool, unlinkTool],
+    [imageTool, audioTool, videoTool],
     [textAlignTool],
     [tableTool, tableEditTool],
     [cleanTool]
