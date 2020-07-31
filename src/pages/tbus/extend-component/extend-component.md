@@ -94,14 +94,15 @@ export class DivCommander implements Commander {
   recordHistory = true;
 
   /**
-   * 给 TBus 应用样式的方法
-   * @param selection 当前的选区对象
+   * 给 TBus 应用样式的方法。
+   * @param selection 当前的选区对象。
+   * @param params    应用当前命令所需要的值，这里不需要，我们忽略就好。
    * @param overlap   当前选区是否和 Matcher （Matcher 由工具栏配置，一般用于查询当前组件或样式，
    *                  是否和选区完全重叠）指定的规则匹配，部分组件或样式可能需根据这个状态来做操作，
    *                  我们这里暂不需要。
    * @param renderer  TBus 的渲染工具类，可以查询当前状态下，Component、VDom、Fragment、原生 DOM 节点的关系。
    */
-  command(selection: TBSelection, overlap: boolean, renderer: Renderer) {
+  command(selection: TBSelection, params: any, overlap: boolean, renderer: Renderer) {
     selection.ranges.forEach(range => {
       // 创建一个新的组件
       const component = new DivComponent();

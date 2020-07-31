@@ -102,36 +102,26 @@ class ColorCommander implements Commander<string> {
    */
   recordHistory = true;
 
-
-  private color = '';
-
-  /**
-   * 设置当前用户选择的颜色
-   * @param value
-   */
-  updateValue(value: string) {
-    this.color = value;
-  }
-
   /**
    * 根据用户选区，执行操作，让新颜色生效
    *
    * @param selection 选区对象
+   * @param color 要应用的颜色
    */
-  command(selection: TBSelection) {
+  command(selection: TBSelection, color: string) {
     selection.ranges.forEach(range => {
       // 获取选区内所有已选择的范围
       range.getSelectedScope().forEach(item => {
         // 给每一段选中的内容应用样式
         item.fragment.apply(colorFormatter, {
          // 如果当前有颜色，则让颜色生效，否则不生效
-          state: this.color ? FormatEffect.Valid : FormatEffect.Invalid,
+          state: color ? FormatEffect.Valid : FormatEffect.Invalid,
           startIndex: item.startIndex,
           endIndex: item.endIndex,
           abstractData: new FormatAbstractData({
             style: {
               name: 'color',
-              value: this.color
+              value: color
             }
           })
         });

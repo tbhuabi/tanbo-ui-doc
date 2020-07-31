@@ -1,10 +1,11 @@
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>TBus 示例</title>
-  <link href="/path/tbus.min.css" rel="stylesheet">
-  <script src="/path/tbus.min.js"></script>
+  <link href="https://www.tanboui.com/static/tbus/tbus.min.css" rel="stylesheet">
+  <script src="https://www.tanboui.com/static/tbus/tbus.min.js"></script>
 </head>
 <body>
   <div id="editor"></div>
@@ -54,11 +55,15 @@ import {
   textIndentTool,
   ulTool,
   underlineTool,
-  unlinkTool,  
-  videoTool, 
-  codeTool, 
-  leftToRightTool, 
-  rightToLeftTool
+  videoTool,
+  codeTool,
+  leftToRightTool,
+  rightToLeftTool,
+  tableAddParagraphTool,
+  tableRemoveTool,
+  tdBorderColorTool,
+  unlinkTool, 
+  findTool
 } from '@tanbo/tbus';
 
 const editor = new Editor(document.getElementById('editor'), {
@@ -77,7 +82,8 @@ const editor = new Editor(document.getElementById('editor'), {
     [linkTool, unlinkTool],
     [imageTool, audioTool, videoTool],
     [textAlignTool],
-    [tableTool, tableEditTool],
+    [tableTool, tableEditTool, tdBorderColorTool, tableAddParagraphTool, tableRemoveTool],
+    [findTool],
     [cleanTool]
   ]
 });
