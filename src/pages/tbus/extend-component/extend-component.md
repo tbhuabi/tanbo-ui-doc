@@ -1,6 +1,6 @@
 ```typescript
 // # div.component.ts
-import { VElement, DivisionComponent, EventType, breakingLine, ComponentReader, ViewData } from '@tanbo/tbus';
+import { VElement, DivisionComponent, EventType, breakingLine, ComponentReader, ViewData } from '@tanbo/textbus';
 
 /**
  * 创建 Div 组件，并继承 DivisionComponent，表示这是一个只有一个子插槽的组件。
@@ -36,7 +36,7 @@ export class DivComponent extends DivisionComponent {
     // 创建虚拟 DOM
     const block = new VElement(this.tagName);
     // 因为当前组件只有一层结构，且自已本身的内容就是可编辑的内容，所以把 block 赋值到 vEle，
-    // 当 TBus 通过 getSlotView 方法获取子插槽时，返回 block，TBus 就会知道把后续的子内容，插入到 block 里。
+    // 当 TextBus 通过 getSlotView 方法获取子插槽时，返回 block，TextBus 就会知道把后续的子内容，插入到 block 里。
     this.vEle = block;
 
     if (!isProduction) {
@@ -81,7 +81,7 @@ export class DivComponent extends DivisionComponent {
 
 ```typescript
 // # div.commander.ts
-import { BrComponent, Commander, Renderer, TBSelection } from '@tanbo/tbus';
+import { BrComponent, Commander, Renderer, TBSelection } from '@tanbo/textbus';
 import { DivComponent } from './div.component';
 
 /**
@@ -94,13 +94,13 @@ export class DivCommander implements Commander {
   recordHistory = true;
 
   /**
-   * 给 TBus 应用样式的方法。
+   * 给 TextBus 应用样式的方法。
    * @param selection 当前的选区对象。
    * @param params    应用当前命令所需要的值，这里不需要，我们忽略就好。
    * @param overlap   当前选区是否和 Matcher （Matcher 由工具栏配置，一般用于查询当前组件或样式，
    *                  是否和选区完全重叠）指定的规则匹配，部分组件或样式可能需根据这个状态来做操作，
    *                  我们这里暂不需要。
-   * @param renderer  TBus 的渲染工具类，可以查询当前状态下，Component、VDom、Fragment、原生 DOM 节点的关系。
+   * @param renderer  TextBus 的渲染工具类，可以查询当前状态下，Component、VDom、Fragment、原生 DOM 节点的关系。
    */
   command(selection: TBSelection, params: any, overlap: boolean, renderer: Renderer) {
     selection.ranges.forEach(range => {
@@ -131,7 +131,7 @@ export class DivCommander implements Commander {
 
 ```typescript
 // # div.tool.ts
-import { Toolkit } from '@tanbo/tbus';
+import { Toolkit } from '@tanbo/textbus';
 import { DivCommander } from './div.commander';
 
 export const divTool = Toolkit.makeButtonTool({
@@ -141,12 +141,12 @@ export const divTool = Toolkit.makeButtonTool({
   }
 })
 ```
-最后，我们把新创建的工具添加到 TBus 中。
+最后，我们把新创建的工具添加到 TextBus 中。
 
-<h2 uiAnchor id="把新工具配置-TBus-中">把新工具配置 TBus 中</h2>
+<h2 uiAnchor id="把新工具配置-TextBus-中">把新工具配置 TextBus 中</h2>
 
 ```typescript
-import { createEditor, defaultOptions } from '@tanbo/tbus';
+import { createEditor, defaultOptions } from '@tanbo/textbus';
 
 import { divTool } from './div.tool';
 
@@ -156,7 +156,7 @@ const editor = createEditor('#editor');
 
 ```
 
-至此，我们添加新组件的功能就算全做完了，当在工具条点击 "div 组件" 按钮时，TBus 会创建一个新的 div 组件，并插入在当前组件后面，且把光标移入到了新组件内。但这里还有一个问题，当 TBus 初始化时，一般用户传入一段 HTML 内容，我们当前的开发的组件，只能添加，而不能把用户传入的 HTML 解析成对应的组件。所以我们还需要做一件事情，就是让 TBus 有能力知道，当用户传入的 HTML 中，有 `div` 标签时，会自动将 `div` 标签识别成我们新开发的 `DivComponent`。
+至此，我们添加新组件的功能就算全做完了，当在工具条点击 "div 组件" 按钮时，TextBus 会创建一个新的 div 组件，并插入在当前组件后面，且把光标移入到了新组件内。但这里还有一个问题，当 TextBus 初始化时，一般用户传入一段 HTML 内容，我们当前的开发的组件，只能添加，而不能把用户传入的 HTML 解析成对应的组件。所以我们还需要做一件事情，就是让 TextBus 有能力知道，当用户传入的 HTML 中，有 `div` 标签时，会自动将 `div` 标签识别成我们新开发的 `DivComponent`。
 
 其实，这并不是什么难事，下面我们来写一个组件解析器吧！
 
@@ -166,7 +166,7 @@ const editor = createEditor('#editor');
 
 ```typescript
 // # div.component.ts
-import { VElement, DivisionComponent, EventType, breakingLine, ComponentReader, ViewData } from '@tanbo/tbus';
+import { VElement, DivisionComponent, EventType, breakingLine, ComponentReader, ViewData } from '@tanbo/textbus';
 
 /**
  * 创建 Div 组件，并继承 DivisionComponent，表示这是一个只有一个子插槽的组件。
@@ -179,7 +179,7 @@ export class DivComponent extends DivisionComponent {...}
  */
 export class DivComponentReader implements ComponentReader {
   /**
-   * 匹配当前 HTML 元素是否为 Div 组件，当结果为 true 时，TBus 将会调用 from 方法。
+   * 匹配当前 HTML 元素是否为 Div 组件，当结果为 true 时，TextBus 将会调用 from 方法。
    * @param element
    */
   match(element: HTMLElement): boolean {
@@ -187,7 +187,7 @@ export class DivComponentReader implements ComponentReader {
   }
 
   /**
-   * 根据 HTML 元素，返回一个新的 TBus 组件，及其子插槽和子插槽内容对应的 HTML 容器。
+   * 根据 HTML 元素，返回一个新的 TextBus 组件，及其子插槽和子插槽内容对应的 HTML 容器。
    * 这里，我们的 div 组件本身就是子插槽内容的容器，所以我们直接返回了当前的 element。
    * @param element
    */
@@ -204,10 +204,10 @@ export class DivComponentReader implements ComponentReader {
 }
 ```
 
-现在，我们再次配置 TBus，把我们新开发的 div 解析器添加在 TBus 的配置项中。
+现在，我们再次配置 TextBus，把我们新开发的 div 解析器添加在 TextBus 的配置项中。
 
 ```typescript
-import { createEditor, defaultOptions } from '@tanbo/tbus';
+import { createEditor, defaultOptions } from '@tanbo/textbus';
 
 import { DivComponentReader } from './div.component';
 import { divTool } from './div.tool';

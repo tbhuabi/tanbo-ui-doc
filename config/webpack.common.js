@@ -138,7 +138,7 @@ module.exports = {
       'process.env': {
         ENV: JSON.stringify(isProduction ? 'production' : 'development'),
         VERSION: JSON.stringify(require('../package').dependencies["@tanbo/ui"]),
-        EDITOR_VERSION: JSON.stringify(require('../package').dependencies["@tanbo/tbus"]),
+        EDITOR_VERSION: JSON.stringify(require('../package').dependencies["@tanbo/textbus"]),
         IP: JSON.stringify(globalConfig.ip)
       }
     })

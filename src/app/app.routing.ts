@@ -17,7 +17,11 @@ const routes: Routes = [{
   loadChildren: () => import('../pages/bezier/bezier.module').then(mod => mod.BezierModule)
 }, {
   path: 'tbus',
-  loadChildren: () => import('../pages/tbus/tbus.module').then(mod => mod.TBusModule)
+  redirectTo: 'textbus',
+  pathMatch: 'full'
+}, {
+  path: 'textbus',
+  loadChildren: () => import('../pages/tbus/tbus.module').then(mod => mod.TextBusModule)
 }];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

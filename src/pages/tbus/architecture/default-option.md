@@ -1,6 +1,6 @@
 ```js
 /**
- * TBus 配置项
+ * TextBus 配置项
  */
 export interface EditorOptions {
   /** 设置主题 */
@@ -23,7 +23,7 @@ export interface EditorOptions {
   styleSheets?: string[];
   /** 配置文档编辑状态下用到的样式 */
   editingStyleSheets?: string[];
-  /** 设置初始化 TBus 时的默认内容 */
+  /** 设置初始化 TextBus 时的默认内容 */
   contents?: string;
   /** 设置可选的自定义组件 */
   componentLibrary?: ComponentExample[];

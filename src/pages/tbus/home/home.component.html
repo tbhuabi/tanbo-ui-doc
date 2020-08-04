@@ -1,29 +1,29 @@
 <div class="doc">
   <link rel="markdown" href="./home.md">
-  <h3 uiAnchor id="通过标签引入-TBus">通过标签引入 TBus</h3>
-  <p>你也可以直接下载 TBus 的 js 文件和 css 文件，然后引用到你的页面中：</p>
+  <h3 uiAnchor id="通过标签引入-TextBus">通过标签引入 TextBus</h3>
+  <p>你也可以直接下载 TextBus 的 js 文件和 css 文件，然后引用到你的页面中：</p>
   <p>
     点击下载
-    <a href="/static/tbus/tbus.min.js" download>tbus.min.js</a> &nbsp;
-    <a href="/static/tbus/tbus.min.css" download>tbus.min.css</a>
+    <a href="/static/textbus/textbus.min.js" download>textbus.min.js</a> &nbsp;
+    <a href="/static/textbus/textbus.min.css" download>textbus.min.css</a>
   </p>
   <link rel="markdown" href="./home2.md">
-  <h3 uiAnchor id="TBus-的亮点">TBus 的亮点</h3>
+  <h3 uiAnchor id="TextBus-的亮点">TextBus 的亮点</h3>
   <h5 uiAnchor id="简洁的输出结果">简洁的输出结果</h5>
-  <p>得益于先进的设计，TBus 有着对内容非同一般的优化能力。我们对目前相对比较流行的富文本编辑器做了相同测试（时间：2019-12-27）：<br>
+  <p>得益于先进的设计，TextBus 有着对内容非同一般的优化能力。我们对目前相对比较流行的富文本编辑器做了相同测试（时间：2019-12-27）：<br>
     <a href="http://www.wangeditor.com/" target="_blank">wangEditor</a>、
     <a href="https://www.tiny.cloud/docs/demo/full-featured/" target="_blank">TinyMCE</a>、
     <a href="http://ueditor.baidu.com/website/onlinedemo.html" target="_blank">UEditor</a>、
     <a href="http://kindeditor.net/demo.php" target="_blank">KindEditor</a>、
     <a href="https://textbox.io/" target="_blank">Textbox</a>、
     <a href="https://ckeditor.com/ckeditor-5/demo/" target="_blank">CKEditor</a>、
-    <a href="https://quilljs.com/" target="_blank">Quill</a>，<br>在同样操作的情况下，对比输出的结果，可以看到，在任何情况下，TBus
+    <a href="https://quilljs.com/" target="_blank">Quill</a>，<br>在同样操作的情况下，对比输出的结果，可以看到，在任何情况下，TextBus
     编辑器都有着优异的输出结果，而其它编辑器，输出结果却不能总是保证是最优结果，测试对比结果如下：
   </p>
   <ui-panel class="ui-fill">
     <ui-panel-header>
       <form class="editor-tabs">
-        <label><strong>TBus</strong></label>
+        <label><strong>TextBus</strong></label>
         <label>
           <ui-input type="checkbox" [(ngModel)]="editors.wangEditor" name="wangEditor" value="wangEditor"></ui-input>
           wangEditor</label>
@@ -51,7 +51,7 @@
       <ui-timeline [ngClass]="editors">
         <ui-timeline-item checked>
           <div class="ui-timeline-content" style="font-weight: bold">
-            <div>TBus</div>
+            <div>TextBus</div>
             <div>wangEditor</div>
             <div>TinyMCE</div>
             <div>UEditor</div>
@@ -65,8 +65,8 @@
           <h4 class="ui-timeline-title">1、输入 0123456789ABCDEFG</h4>
           <div class="ui-timeline-content">
             <div>
-              <link rel="html" href="step1/TBus.html">
-              <link rel="markdown" href="step1/TBus.html">
+              <link rel="html" href="step1/TextBus.html">
+              <link rel="markdown" href="step1/TextBus.html">
             </div>
             <div>
               <link rel="html" href="step1/wangEditor.html">
@@ -102,8 +102,8 @@
           <h4 class="ui-timeline-title">2、B~F 加粗</h4>
           <div class="ui-timeline-content">
             <div>
-              <link rel="html" href="step2/TBus.html">
-              <link rel="markdown" href="step2/TBus.html">
+              <link rel="html" href="step2/TextBus.html">
+              <link rel="markdown" href="step2/TextBus.html">
             </div>
             <div>
               <link rel="html" href="step2/wangEditor.html">
@@ -139,8 +139,8 @@
           <h4 class="ui-timeline-title">3、2~6 加粗</h4>
           <div class="ui-timeline-content">
             <div>
-              <link rel="html" href="step3/TBus.html">
-              <link rel="markdown" href="step3/TBus.html">
+              <link rel="html" href="step3/TextBus.html">
+              <link rel="markdown" href="step3/TextBus.html">
             </div>
             <div>
               <link rel="html" href="step3/wangEditor.html">
@@ -176,8 +176,8 @@
           <h4 class="ui-timeline-title">4、4~D 斜体</h4>
           <div class="ui-timeline-content">
             <div>
-              <link rel="html" href="step4/TBus.html">
-              <link rel="markdown" href="step4/TBus.html">
+              <link rel="html" href="step4/TextBus.html">
+              <link rel="markdown" href="step4/TextBus.html">
             </div>
             <div>
               <link rel="html" href="step4/wangEditor.html">
@@ -213,8 +213,8 @@
           <h4 class="ui-timeline-title">5、6~B 加粗</h4>
           <div class="ui-timeline-content">
             <div>
-              <link rel="html" href="step5/TBus.html">
-              <link rel="markdown" href="step5/TBus.html">
+              <link rel="html" href="step5/TextBus.html">
+              <link rel="markdown" href="step5/TextBus.html">
             </div>
             <div>
               <link rel="html" href="step5/wangEditor.html">
@@ -250,8 +250,8 @@
           <h4 class="ui-timeline-title">6、0~G 斜体</h4>
           <div class="ui-timeline-content">
             <div>
-              <link rel="html" href="step6/TBus.html">
-              <link rel="markdown" href="step6/TBus.html">
+              <link rel="html" href="step6/TextBus.html">
+              <link rel="markdown" href="step6/TextBus.html">
             </div>
             <div>
               <link rel="html" href="step6/wangEditor.html">
@@ -289,8 +289,8 @@
 </div>
 <div class="doc-quick-links">
   <a uiAnchorLink routerLink="./" fragment="安装">安装</a>
-  <a uiAnchorLink routerLink="./" fragment="通过标签引入-TBus">通过标签引入-TBus</a>
+  <a uiAnchorLink routerLink="./" fragment="通过标签引入-TextBus">通过标签引入-TextBus</a>
   <a uiAnchorLink routerLink="./" fragment="功能定制">功能定制</a>
-  <a uiAnchorLink routerLink="./" fragment="TBus-的亮点">TBus 的亮点</a>
+  <a uiAnchorLink routerLink="./" fragment="TextBus-的亮点">TextBus 的亮点</a>
   <a uiAnchorLink class="h4" routerLink="./" fragment="简洁的输出结果">简洁的输出结果</a>
 </div>

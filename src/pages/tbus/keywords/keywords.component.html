@@ -1,5 +1,5 @@
 <h1 uiAnchor id="名词解释">名词解释</h1>
-<p>为了在使用中更好的利用 TBus 提供的一系列能力，准确的理解 TBus 中和各种概念是非常必要的。下面我们分别对基础数据、交互能力、选区、渲染及其它相关的名词术语作一一解释。</p>
+<p>为了在使用中更好的利用 TextBus 提供的一系列能力，准确的理解 TextBus 中和各种概念是非常必要的。下面我们分别对基础数据、交互能力、选区、渲染及其它相关的名词术语作一一解释。</p>
 <div>
   <div class="ui-form-group">
     <label class="ui-control-label"></label>
@@ -22,20 +22,20 @@
   <div class="ui-form-group">
     <label class="ui-control-label ui-control-label-compact"><code>Slot</code> <br><small>插槽</small></label>
     <div class="ui-control-static">
-      插槽为一个抽象的概念。在 TBus 中，一个插槽，意味着一段可编辑的区域（即 <code>Fragment</code>），它们总是呈一对一映射关系的。<br>
+      插槽为一个抽象的概念。在 TextBus 中，一个插槽，意味着一段可编辑的区域（即 <code>Fragment</code>），它们总是呈一对一映射关系的。<br>
       如一个无序列表 ul，每一个子插槽都是一个 li，li 的内容可以是变化的，但 ul 的子级总是 li，这是不可变的。
     </div>
   </div>
   <div class="ui-form-group">
     <label class="ui-control-label ui-control-label-compact"><code>ComponentReader</code> <br><small>组件解析器</small></label>
     <div class="ui-control-static">
-      组件解析器负责把一段匹配到的 HTML 元素，转换为对应的 <code>Component</code> 实例。当我们要扩展 TBus 的结构样板时，可以自定义一个组件解析器，并添加在 TBus 配置项的 componentReaders 中。<br> TBus 所有的核心组件也都是以同样方式实现的。
+      组件解析器负责把一段匹配到的 HTML 元素，转换为对应的 <code>Component</code> 实例。当我们要扩展 TextBus 的结构样板时，可以自定义一个组件解析器，并添加在 TextBus 配置项的 componentReaders 中。<br> TextBus 所有的核心组件也都是以同样方式实现的。
     </div>
   </div>
   <div class="ui-form-group">
     <label class="ui-control-label ui-control-label-compact"><code>Formatter</code> <br><small>格式转换器</small></label>
     <div class="ui-control-static">
-      格式转换器负责把匹配到的格式转换为抽象的格式数据（<code>FormatAbstractData</code>），并根据不同的上下文及状态渲染相应格式。当我们要扩展格式的时候，就可以通过继承 <code>BlockFormatter</code> 或 <code>InlineFormatter</code>，并把对应实例添加到 TBus 配置项的 Formatters 选项中，来实现自己想要的格式。
+      格式转换器负责把匹配到的格式转换为抽象的格式数据（<code>FormatAbstractData</code>），并根据不同的上下文及状态渲染相应格式。当我们要扩展格式的时候，就可以通过继承 <code>BlockFormatter</code> 或 <code>InlineFormatter</code>，并把对应实例添加到 TextBus 配置项的 Formatters 选项中，来实现自己想要的格式。
     </div>
   </div>
   <div class="ui-form-group">
@@ -55,13 +55,13 @@
   <div class="ui-form-group">
     <label class="ui-control-label ui-control-label-compact"><code>Tool</code> <br><small>操作工具</small></label>
     <div class="ui-control-static">
-      用于操作 TBus 的工具类，当用户点击或选择工具类时，执行对应的 Command 命令。
+      用于操作 TextBus 的工具类，当用户点击或选择工具类时，执行对应的 Command 命令。
     </div>
   </div>
   <div class="ui-form-group">
     <label class="ui-control-label ui-control-label-compact"><code>Commander</code> <br><small>格式化命令</small></label>
     <div class="ui-control-static">
-      提供了操作 TBus 抽象数据的能力。当用户操作某项工具时，用于响应并执行对应操作。
+      提供了操作 TextBus 抽象数据的能力。当用户操作某项工具时，用于响应并执行对应操作。
     </div>
   </div>
   <div class="ui-form-group">
@@ -73,7 +73,7 @@
   <div class="ui-form-group">
     <label class="ui-control-label ui-control-label-compact"><code>Lifecycle</code> <br><small>生命周期</small></label>
     <div class="ui-control-static">
-      当用户触发或 TBus 运行到某些关键节点时，所广播的事件，监听这些事件，并作出操作，可扩展出除了 <code>Commander</code> 以外额外的能力。
+      当用户触发或 TextBus 运行到某些关键节点时，所广播的事件，监听这些事件，并作出操作，可扩展出除了 <code>Commander</code> 以外额外的能力。
     </div>
   </div>
   <div class="ui-form-group">

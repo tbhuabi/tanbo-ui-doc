@@ -44,6 +44,6 @@ import { AboutComponent } from './about/about.component';
     useValue: 70
   }]
 })
-export class TBusModule {
+export class TextBusModule {
 
 }

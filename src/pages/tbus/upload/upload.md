@@ -1,9 +1,9 @@
 <h1 uiAnchor id="上传图片">上传图片</h1>
 
-TBus 并未实现任何上传功能，只在配置项提供了一个接口，由使用者自定义上传方式。如上传图片：
+TextBus 并未实现任何上传功能，只在配置项提供了一个接口，由使用者自定义上传方式。如上传图片：
 
 ```typescript
-import { createEditor } from '@tanbo/tbus';
+import { createEditor } from '@tanbo/textbus';
 import { Observable } from 'rxjs';
 
 createEditor('#editor', {
@@ -42,4 +42,4 @@ createEditor('#editor', {
 
 <h2 uiAnchor id="关于-Type-参数">关于 Type 参数</h2>
 
-TBus 未预定义 uploader 函数的 type 参数值，type 参数值是由工具条的工具类定义的，目前 TBus 自带的工具类有 image、video、audio 三种。其它的则由用户扩展的工具类定义。
+TextBus 未预定义 uploader 函数的 type 参数值，type 参数值是由工具条的工具类定义的，目前 TextBus 自带的工具类有 image、video、audio 三种。其它的则由用户扩展的工具类定义。

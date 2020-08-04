@@ -1,26 +1,26 @@
 <h1 uiAnchor id="自定义组件">自定义组件</h1>
 
-<p>TBus 中组件和现在前端流行的组件是差不多的。组件一般有一段基本固定的结构，可以通过属性或方法更改组件的数据，达到定制组件的目的。同时组件也可以有任意个子插槽，插槽中的内容可以任意编辑。</p>
+<p>TextBus 中组件和现在前端流行的组件是差不多的。组件一般有一段基本固定的结构，可以通过属性或方法更改组件的数据，达到定制组件的目的。同时组件也可以有任意个子插槽，插槽中的内容可以任意编辑。</p>
 
-<p>虽然 TBus 中组件和传统 web 开发中的组件差不多，但毕竟 TBus 中的组件是为了富文本编辑用的，还是需要遵循一些规则，才能更好的实现我们想要编辑的功能。TBus 把组件分为了以下 4 种：</p>
+<p>虽然 TextBus 中组件和传统 web 开发中的组件差不多，但毕竟 TextBus 中的组件是为了富文本编辑用的，还是需要遵循一些规则，才能更好的实现我们想要编辑的功能。TextBus 把组件分为了以下 4 种：</p>
 
 <div class="ui-form-group">
   <label class="ui-control-label ui-control-label-compact"><code>DivisionComponent</code> <br><small>区块组件</small></label>
   <div class="ui-control-static">
-    只有一个子插槽的组件，我们可以把 HTML 部分标签看成是这类组件，如：p、div、article、blockquote 等。实际上，在 TBus 默认的组件中，就是把原生的 p、div 等封装成 DivisionComponent 组件。<br>
+    只有一个子插槽的组件，我们可以把 HTML 部分标签看成是这类组件，如：p、div、article、blockquote 等。实际上，在 TextBus 默认的组件中，就是把原生的 p、div 等封装成 DivisionComponent 组件。<br>
     当然，DivisionComponent 也可以扩展其它自定义的结构，维一限制就是，有且只有一个子插槽。
   </div>
 </div>
 <div class="ui-form-group">
   <label class="ui-control-label ui-control-label-compact"><code>BranchComponent</code> <br><small>分支组件</small></label>
   <div class="ui-control-static">
-    有固定结构和多个子插槽，且子插槽可任意增加、删除等，如 ul>li、ol>li 等。也可以其它用户自定义的组件，如 TBus 官方组件库提供的待办事项组件。
+    有固定结构和多个子插槽，且子插槽可任意增加、删除等，如 ul>li、ol>li 等。也可以其它用户自定义的组件，如 TextBus 官方组件库提供的待办事项组件。
   </div>
 </div>
 <div class="ui-form-group">
   <label class="ui-control-label ui-control-label-compact"><code>BackboneComponent</code> <br><small>骨架组件</small></label>
   <div class="ui-control-static">
-    有固定结构和多个子插槽，且子插槽不可随意增删，如 table 下面的 td，td 有多个，但不可随意添加和删除，否则会引起表格错乱，只能通过组件提供的方法，或其它方式，按照一定的规则修改。TBus 的表格和组件库中的卡片就是继承自 BackboneComponent 的组件。
+    有固定结构和多个子插槽，且子插槽不可随意增删，如 table 下面的 td，td 有多个，但不可随意添加和删除，否则会引起表格错乱，只能通过组件提供的方法，或其它方式，按照一定的规则修改。TextBus 的表格和组件库中的卡片就是继承自 BackboneComponent 的组件。
   </div>
 </div>
 <div class="ui-form-group">
@@ -29,8 +29,8 @@
     没有子插槽的组件。如 img、video、audio、br 等，组件本身就是最叶子的组件。
   </div>
 </div>
-<div class="ui-alert ui-alert-dark ui-alert-fill"><strong class="ui-color-danger">注意：</strong>在 TBus 中开发组件，必须继承自上面 4 种组件中的一种，并实现其抽象方法，只有这样，TBus 提供的各项基础能力才能更好的处理富文本编辑的逻辑。</div>
-<p>下面，我们以开发一个 div 组件为例，来初步解开 TBus 组件的面纱！</p>
+<div class="ui-alert ui-alert-dark ui-alert-fill"><strong class="ui-color-danger">注意：</strong>在 TextBus 中开发组件，必须继承自上面 4 种组件中的一种，并实现其抽象方法，只有这样，TextBus 提供的各项基础能力才能更好的处理富文本编辑的逻辑。</div>
+<p>下面，我们以开发一个 div 组件为例，来初步解开 TextBus 组件的面纱！</p>
 
 <h2 uiAnchor id="第一个组件">第一个组件</h2>
 
@@ -45,7 +45,7 @@
   </tr>
   <tr>
     <td>A:</td>
-    <td><p>TBus 在初始化时，会遍历整个 HTML 树，并调用配置项中的 ComponentReader 来转换成 TBus 所需要抽象数据，当匹配某一个 HTML 元素时，只要有一个解析器匹配上，则后面的将不再匹配。要解决此问题，你可以把自己开发解析器，添加在 TBus 配置项的 componentReaders 数组的前面，以调整优先级。</p></td>
+    <td><p>TextBus 在初始化时，会遍历整个 HTML 树，并调用配置项中的 ComponentReader 来转换成 TextBus 所需要抽象数据，当匹配某一个 HTML 元素时，只要有一个解析器匹配上，则后面的将不再匹配。要解决此问题，你可以把自己开发解析器，添加在 TextBus 配置项的 componentReaders 数组的前面，以调整优先级。</p></td>
   </tr>
 
   <tr>
@@ -55,7 +55,7 @@
   <tr>
     <td>A:</td>
     <td>
-      <p>由于组件的形态是不固定的，所以 TBus 在渲染组件后代内容时，不知道要把后代内容放置在组件的什么位置。这时，TBus 会调用组件的 <code>getSlotView</code> 方法，根据返回的虚拟 DOM 元素，插入后代内容。在调用 <code>getSlotView</code> 方法时，如果是 <code>BranchComponent</code> 或 <code>BackboneComponent</code> 组件类时，还会传入当前的 slot，方便组件根据 slot 返回对应的虚拟 DOM 元素。</p>
+      <p>由于组件的形态是不固定的，所以 TextBus 在渲染组件后代内容时，不知道要把后代内容放置在组件的什么位置。这时，TextBus 会调用组件的 <code>getSlotView</code> 方法，根据返回的虚拟 DOM 元素，插入后代内容。在调用 <code>getSlotView</code> 方法时，如果是 <code>BranchComponent</code> 或 <code>BackboneComponent</code> 组件类时，还会传入当前的 slot，方便组件根据 slot 返回对应的虚拟 DOM 元素。</p>
       <p>由于 <code>BranchComponent</code> 和 <code>BackboneComponent</code> 总是要维护虚拟 DOM 和 slot 的映射关系，所以 <code>BranchComponent</code> 和 <code>BackboneComponent</code> 默认自带了一个 <code>viewMap</code> 的 Map 对象，当组件渲染时，需要实时把 slot 和虚拟 DOM 的对应关系保存在 <code>viewMap</code> 中。</p>
     </td>
   </tr>
@@ -67,9 +67,9 @@
   <tr>
     <td>A:</td>
     <td>
-      <p>常见的编辑交互事件，可以订阅虚拟 DOM 元素的 events，并根据不同的事件类型，作不同的操作。如果要监听浏览器原生事件，可以在 events 触发 <code>onRendered</code> 事件时，从 TBEvent 对象的中的 renderer 属性类拿到 TBus 的 Renderer 类实例，再通过 Renderer 实例获取原生 DOM 元素并监听事件。
+      <p>常见的编辑交互事件，可以订阅虚拟 DOM 元素的 events，并根据不同的事件类型，作不同的操作。如果要监听浏览器原生事件，可以在 events 触发 <code>onRendered</code> 事件时，从 TBEvent 对象的中的 renderer 属性类拿到 TextBus 的 Renderer 类实例，再通过 Renderer 实例获取原生 DOM 元素并监听事件。
       </p>
-      <p>如果，以上还不能满足需求，还可以通过添加 TBus 生命周期类，来订制你想要的功能！</p>
+      <p>如果，以上还不能满足需求，还可以通过添加 TextBus 生命周期类，来订制你想要的功能！</p>
     </td>
   </tr>
 
@@ -80,8 +80,8 @@
   <tr>
     <td>A:</td>
     <td>
-      <p>TBus 并不知道某个元素绑定的事件里会做什么操作。出于性能考虑，TBus 也不会去监听内容变化，而是每次操作后，通过通知告诉 TBus 需要更新 DOM。</p>
-      <p>一般情况下，TBus 默认的事件系统已经能够满足大部分需求，但还是有一些情况不在预料中，如原生事件修改了 TBus 的数据。这时，需要手手发布事件，让 TBus 知道，内容变化了。请参考下面的示例：</p>
+      <p>TextBus 并不知道某个元素绑定的事件里会做什么操作。出于性能考虑，TextBus 也不会去监听内容变化，而是每次操作后，通过通知告诉 TextBus 需要更新 DOM。</p>
+      <p>一般情况下，TextBus 默认的事件系统已经能够满足大部分需求，但还是有一些情况不在预料中，如原生事件修改了 TextBus 的数据。这时，需要手手发布事件，让 TextBus 知道，内容变化了。请参考下面的示例：</p>
       <link rel="markdown" href="./1.md">
     </td>
   </tr>
@@ -93,7 +93,7 @@
   <a uiAnchorLink routerLink="./" fragment="第一个组件">第一个组件</a>
   <a uiAnchorLink routerLink="./" fragment="创建-Commander-类">创建 Commander 类</a>
   <a uiAnchorLink routerLink="./" fragment="创建工具条工具">创建工具条工具</a>
-  <a uiAnchorLink routerLink="./" fragment="把新工具配置-TBus-中">把新工具配置 TBus 中</a>
+  <a uiAnchorLink routerLink="./" fragment="把新工具配置-TextBus-中">把新工具配置 TextBus 中</a>
   <a uiAnchorLink routerLink="./" fragment="组件解析器">组件解析器</a>
   <a uiAnchorLink routerLink="./" fragment="开发组件时常见问题">开发组件时常见问题</a>
 </div>

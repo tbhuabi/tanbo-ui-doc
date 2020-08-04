@@ -1,6 +1,6 @@
 <h1 id="自定义格式" uiAnchor>自定义格式</h1>
 
-在 TBus 中扩展格式是很简单的事情，只需要继承 Formatter 类，并完成抽象方法，即可扩展任意样式。我们以给文字加颜色为例，实现一个自定义的 Formatter。
+在 TextBus 中扩展格式是很简单的事情，只需要继承 Formatter 类，并完成抽象方法，即可扩展任意样式。我们以给文字加颜色为例，实现一个自定义的 Formatter。
 
 <h2 id="创建-ColorFormatter-类" uiAnchor>创建 ColorFormatter 类</h2>
 
@@ -14,7 +14,7 @@ import {
   ChildSlotModel,
   ReplaceModel,
   FormatterPriority
-} from '@tanbo/tbus';
+} from '@tanbo/textbus';
 
 /**
  * 创建新的字体颜色类
@@ -34,7 +34,7 @@ class ColorFormatter extends InlineFormatter {
   }
 
   /**
-   * 当 TBus 初始化时，如果某个节点通过了 Formatter 的规则匹配，则会调用 read 方法。
+   * 当 TextBus 初始化时，如果某个节点通过了 Formatter 的规则匹配，则会调用 read 方法。
    * read 方法返回一个记录了当前样式的抽象数据，用于后面的修改和渲染。
    *
    * @param node Formatter 匹配通过的节点
@@ -49,7 +49,7 @@ class ColorFormatter extends InlineFormatter {
   }
 
   /**
-   * 当 TBus 渲染样式时，会调用 Formatter 类 render 方法，并根据 render 方法返回的渲染模式，处理虚拟 DOM 结构。
+   * 当 TextBus 渲染样式时，会调用 Formatter 类 render 方法，并根据 render 方法返回的渲染模式，处理虚拟 DOM 结构。
    *
    * @param isProduction  是否是输出模式，有些情况下，编辑模式和输出模式渲染的结果是需要不一样的。
    *                      如在编辑状态下，可能会添加一些临时的属性来做交互，或者兼听一些事件等等，这在输出结果时，是不需要的。
@@ -80,7 +80,7 @@ class ColorFormatter extends InlineFormatter {
 
 export const colorFormatter = new ColorFormatter();
 ```
-当创建完成 ColorFormatter 类时，其实我们已经完成了 99% 的工作，只需要实例化后，添加在 TBus 的配置项即可。但常见情况下，我们还需要一个操作命令，让用户可以通过一些交互，让其可以实时修改文档中的格式。
+当创建完成 ColorFormatter 类时，其实我们已经完成了 99% 的工作，只需要实例化后，添加在 TextBus 的配置项即可。但常见情况下，我们还需要一个操作命令，让用户可以通过一些交互，让其可以实时修改文档中的格式。
 
 下面，我们再创建一个命令工具。
 
@@ -90,7 +90,7 @@ export const colorFormatter = new ColorFormatter();
 ```typescript
 // # color.commander.ts
 
-import { Commander, FormatAbstractData, FormatEffect, TBSelection } from '@tanbo/tbus';
+import { Commander, FormatAbstractData, FormatEffect, TBSelection } from '@tanbo/textbus';
 import { colorFormatter } from './color.formatter';
 
 /**
@@ -137,7 +137,7 @@ class ColorCommander implements Commander<string> {
 
 ```typescript
 // # color.tool.ts
-import { Toolkit, FormatAbstractData, FormatMatcher } from '@tanbo/tbus';
+import { Toolkit, FormatAbstractData, FormatMatcher } from '@tanbo/textbus';
 import { colorFormatter } from './color.formatter';
 
 import { ColorCommander } from './color.commander';
@@ -173,12 +173,12 @@ export const colorTool = Toolkit.makeSelectTool({
 });
 ```
 
-至此，我们的准备工作就全部做完了，把 colorFormatter 和 colorTool 配置到 TBus 的选项里，即可看到新开发的功能了。
+至此，我们的准备工作就全部做完了，把 colorFormatter 和 colorTool 配置到 TextBus 的选项里，即可看到新开发的功能了。
 
-<h2 id="配置-TBus，让新格式生效" uiAnchor>配置 TBus，让新格式生效</h2>
+<h2 id="配置-TextBus，让新格式生效" uiAnchor>配置 TextBus，让新格式生效</h2>
 
 ```typescript
-import { createEditor, defaultOptions } from '@tanbo/tbus';
+import { createEditor, defaultOptions } from '@tanbo/textbus';
 
 import { colorTool } from './color.tool';
 import { colorFormatter } from './color.formatter';
