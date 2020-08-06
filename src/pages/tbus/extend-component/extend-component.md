@@ -1,6 +1,6 @@
 ```typescript
 // # div.component.ts
-import { VElement, DivisionComponent, EventType, breakingLine, ComponentReader, ViewData } from '@tanbo/textbus';
+import { VElement, DivisionComponent, EventType, breakingLine, ComponentReader, ViewData, NativeEventManager } from '@tanbo/textbus';
 
 /**
  * 创建 Div 组件，并继承 DivisionComponent，表示这是一个只有一个子插槽的组件。
@@ -30,16 +30,17 @@ export class DivComponent extends DivisionComponent {
 
   /**
    * 渲染方法，根据不同条件渲染当前组件的虚拟 DOM。
-   * @param isProduction 是否是输入模式。
+   * @param isOutputModel 是否是输出模式。
+   * @param eventManager 原生事件管理器，用于通过虚拟 DOM 监听或销毁原生事件。
    */
-  render(isProduction: boolean) {
+  render(isOutputModel: boolean, eventManager: NativeEventManager) {
     // 创建虚拟 DOM
     const block = new VElement(this.tagName);
     // 因为当前组件只有一层结构，且自已本身的内容就是可编辑的内容，所以把 block 赋值到 vEle，
     // 当 TextBus 通过 getSlotView 方法获取子插槽时，返回 block，TextBus 就会知道把后续的子内容，插入到 block 里。
     this.vEle = block;
 
-    if (!isProduction) {
+    if (!isOutputModel) {
       // 如果不是输出模式，则订阅事件
       block.events.subscribe(event => {
         // 当用户敲击回车时，新创建一个段落，并把光标设置到新段落的第一个可放置的位置，
