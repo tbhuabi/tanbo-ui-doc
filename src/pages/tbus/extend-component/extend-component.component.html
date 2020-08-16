@@ -67,7 +67,7 @@
   <tr>
     <td>A:</td>
     <td>
-      <p>常见的编辑交互事件，可以订阅虚拟 DOM 元素的 events，并根据不同的事件类型，作不同的操作。如果要监听浏览器原生事件，可以在 events 触发 <code>onRendered</code> 事件时，从 TBEvent 对象的中的 renderer 属性类拿到 TextBus 的 Renderer 类实例，再通过 Renderer 实例获取原生 DOM 元素并监听事件。
+      <p>常见的编辑交互事件，可以订阅虚拟 DOM 元素的 events，并根据不同的事件类型，做不同的操作。如果要监听浏览器原生事件，可以通过 render 方法的第二个参数获取到 <code>NativeEventManager</code> 对象<small>（组件 render 方法的第二个参数，该对象只有在编辑模式才会存在）</small>，然后再监听事件，并定制交互行为。
       </p>
       <p>如果，以上还不能满足需求，还可以通过添加 TextBus 生命周期类，来订制你想要的功能！</p>
     </td>
@@ -80,9 +80,9 @@
   <tr>
     <td>A:</td>
     <td>
-      <div class="ui-alert ui-alert-dark ui-alert-fill"><strong class="ui-color-danger">注意：</strong>TextBus 并不推荐手动绑定原生事件，而是应该通过 <code>NativeEventManger</code> <small>（组件 render 方法的第二个参数，该对象只有在编辑模式才会存在）</small>对象来绑定原生事件，这样 TextBus 就可以做到自动渲染原生事件执行后的变化。但如果你一定要手动绑定原生事件，那么也就需要你手动通知 TextBus，数据被意外更改了，从页触发 TextBus 重新渲染。</div>
-      <p>TextBus 并不知道某个元素绑定的事件里会做什么操作。出于性能考虑，TextBus 也不会去监听内容变化，而是每次操作后，通过通知告诉 TextBus 需要更新 DOM。</p>
+      <p>如果是通过 NativeEventManager 对象绑定的原生事件，TextBus 会在事件执行完毕之后，更新变化，但有的时候，可能通过其它方式添加了事件，这时，TextBus 并不知道某个元素绑定的事件里会做什么操作。出于性能考虑，TextBus 也不会去监听内容变化，而是每次操作后，通过通知告诉 TextBus 需要更新 DOM。</p>
       <p>一般情况下，TextBus 默认的事件系统已经能够满足大部分需求，但还是有一些情况不在预料中，如原生事件修改了 TextBus 的数据。这时，需要手动发布事件，让 TextBus 知道，内容变化了。请参考下面的示例：</p>
+      <div class="ui-alert ui-alert-dark ui-alert-fill"><strong class="ui-color-danger">注意：</strong>下面的示例是不好的实践，这里只是为了说明怎么样发布事件，最好不要参考下面的示例去实现功能！</div>
       <link rel="markdown" href="./1.md">
     </td>
   </tr>
