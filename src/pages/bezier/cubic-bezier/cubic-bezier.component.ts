@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { CubicBezier, BezierPoint } from '@tanbo/bezier';
+import { BezierAnchor, CubicBezier } from '@tanbo/bezier';
 
 @Component({
   selector: 'x-cubic-bezier',
@@ -55,7 +55,7 @@ export class CubicBezierComponent implements OnInit {
   private lineCanvasContext: CanvasRenderingContext2D;
   private controlCanvasContext: CanvasRenderingContext2D;
 
-  private prevPoint: BezierPoint;
+  private prevPoint: BezierAnchor;
 
   ngOnInit() {
     const bgCanvas = this.bgCanvas.nativeElement;
@@ -86,18 +86,17 @@ export class CubicBezierComponent implements OnInit {
       this.customParams[2],
       this.customParams[3]);
     this.drawControlLine(this.customParams);
-    this.drawBezier();
-    this.drawLine();
   }
 
   setBezierType(type: string) {
+    this.lineCanvasContext.clearRect(-20, -620, 640, 640);
+    this.bgCanvasContext.clearRect(-20, -620, 640, 640);
     this.type = type;
     const t = this.bezierType[type] || this.bezierType.ios;
     this.bezier = new CubicBezier(t[0], t[1], t[2], t[3]);
     this.customParams = [t[0], t[1], t[2], t[3]];
     this.drawControlLine(this.customParams);
-    this.drawBezier();
-    this.drawLine();
+    this.drawBg();
   }
 
   drawControlLine(t: number[]) {
@@ -129,27 +128,25 @@ export class CubicBezierComponent implements OnInit {
     fn();
   }
 
-  drawBezier() {
+  drawBezier(point: BezierAnchor) {
     const context = this.lineCanvasContext;
     const bgContext = this.bgCanvasContext;
     context.clearRect(-20, -620, 640, 640);
-    this.bezier.onUpdatePoint(point => {
-      if (!this.prevPoint) {
-        context.beginPath();
-        context.moveTo(point.x * 600, point.y * -600);
-      } else {
-        context.lineTo(point.x * 600, point.y * -600);
-      }
-      this.prevPoint = point;
-      context.strokeStyle = '#f90';
-      context.stroke();
+    if (!this.prevPoint) {
+      context.beginPath();
+      context.moveTo(point.x * 600, point.y * -600);
+    } else {
+      context.lineTo(point.x * 600, point.y * -600);
+    }
+    this.prevPoint = point;
+    context.strokeStyle = '#f90';
+    context.stroke();
 
-      bgContext.beginPath();
-      bgContext.fillStyle = '#f90';
-      bgContext.arc(point.x * 600, point.y * -600, 6, 0, Math.PI * 2);
-      bgContext.closePath();
-      bgContext.fill();
-    });
+    bgContext.beginPath();
+    bgContext.fillStyle = '#f90';
+    bgContext.arc(point.x * 600, point.y * -600, 6, 0, Math.PI * 2);
+    bgContext.closePath();
+    bgContext.fill();
   }
 
   drawBg() {
@@ -183,28 +180,23 @@ export class CubicBezierComponent implements OnInit {
     context.stroke();
   }
 
-  drawLine() {
+  drawLine(startPoint: BezierAnchor, endPoint: BezierAnchor) {
     const context = this.bgCanvasContext;
-    context.clearRect(-20, -620, 640, 640);
-    this.drawBg();
-    this.bezier.onUpdateLine(((startPoint, endPoint) => {
-      this.drawPoint(startPoint);
 
-      this.drawPoint(endPoint);
-      context.strokeStyle = '#bbb';
-      context.beginPath();
-      context.moveTo(startPoint.x * 600, startPoint.y * -600);
-      context.lineTo(endPoint.x * 600, endPoint.y * -600);
-      context.closePath();
-      context.stroke();
-    }));
+    context.strokeStyle = '#bbb';
+    context.beginPath();
+    context.moveTo(startPoint.x * 600, startPoint.y * -600);
+    context.lineTo(endPoint.x * 600, endPoint.y * -600);
+    context.closePath();
+    context.stroke();
   }
 
-  drawPoint(point: BezierPoint) {
+  drawPoint(point: BezierAnchor) {
     const context = this.bgCanvasContext;
     context.beginPath();
     context.arc(point.x * 600, point.y * -600, 5, 0, Math.PI * 2);
     context.closePath();
+    context.fillStyle = '#f90';
     context.fill();
   }
 
@@ -220,7 +212,15 @@ export class CubicBezierComponent implements OnInit {
     context.stroke();
 
     this.drawBg();
-    this.result = this.bezier.update(n / 100);
-    return this.result;
+    const b = this.bezier.update(n / 100, anchors => {
+      for (let i = 1; i < anchors.length; i++) {
+        const prev = anchors[i - 1];
+        const current = anchors[i];
+        this.drawLine(prev, current);
+        this.drawPoint(prev);
+        this.drawPoint(current);
+      }
+    });
+    this.drawBezier(b);
   }
 }
