@@ -222,5 +222,6 @@ export class CubicBezierComponent implements OnInit {
       }
     });
     this.drawBezier(b);
+    this.result = b.y;
   }
 }

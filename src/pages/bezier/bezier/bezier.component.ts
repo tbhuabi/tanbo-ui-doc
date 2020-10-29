@@ -181,5 +181,6 @@ export class BezierComponent implements OnInit {
       }
     });
     this.drawBezier(b);
+    this.result = b.y;
   }
 }
