@@ -46,6 +46,10 @@ export class BezierComponent implements OnInit {
     this.run();
   }
 
+  update() {
+    this.bezier = new Bezier(this.parseArgs())
+  }
+
   parseArgs() {
     let arr = this.args.replace(/\s+/g, '').split(',');
     const result: number[] = [];
@@ -71,6 +75,7 @@ export class BezierComponent implements OnInit {
   }
 
   run() {
+    this.update()
     this.lineCanvasContext.clearRect(-320, -320, 640, 640);
     this.bgCanvasContext.clearRect(-320, -320, 640, 640);
     this.lineCanvasContext.closePath();
